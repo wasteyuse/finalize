@@ -1,4 +1,5 @@
-import React from 'react';
+
+import React, { useState } from 'react';
 import { TopBanner } from '@/components/product/TopBanner';
 import { ProductGallery } from '@/components/product/ProductGallery';
 import { ProductInfo } from '@/components/product/ProductInfo';
@@ -45,4 +46,56 @@ const Index = () => {
     },
     {
       question: "How does it work?",
-      answer: "Bleame uses advanced crystal technology to gently remove hair while exfoliating
+      answer: "Bleame uses advanced crystal technology to gently remove hair while exfoliating the skin surface."
+    },
+    {
+      question: "Is it safe to use?",
+      answer: "Yes, Bleame is designed to be safe for all skin types. It's pain-free and gentle on skin."
+    },
+    {
+      question: "How long does it last?",
+      answer: "Each Bleame crystal can last for months with proper care and regular use."
+    }
+  ];
+  
+  const handleVariantSelect = (variant: any) => {
+    console.log("Selected variant:", variant);
+  };
+
+  return (
+    <div className="flex flex-col min-h-screen">
+      <TopBanner />
+      <div className="container max-w-5xl px-4 py-8 mx-auto">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+          <div>
+            <ProductGallery images={productImages} thumbnails={thumbnails} />
+          </div>
+          <div>
+            <ProductInfo 
+              title="Bleame Crystal Hair Eraser™" 
+              subtitle="BRAND NEW STOCK ARRIVED" 
+              rating={4.8} 
+              reviews={2415} 
+              originalPrice={47} 
+              salePrice={29} 
+              discount={38}
+              features={features}
+            />
+            <ProductVariants 
+              variants={variants}
+              bonusImage="https://cdn.builder.io/api/v1/image/assets/TEMP/b6644ee7da92f25de0ae4058653690db479a8d98"
+              paymentMethodsImage="https://cdn.builder.io/api/v1/image/assets/TEMP/d2d27a8d41ca782dec8067829f703b253ae3c1f6"
+              onVariantSelect={handleVariantSelect}
+            />
+          </div>
+        </div>
+        <div className="max-w-3xl mx-auto mt-12">
+          <h2 className="text-xl font-bold mb-4">Frequently Asked Questions</h2>
+          <ProductFAQ items={faqItems} />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Index;
