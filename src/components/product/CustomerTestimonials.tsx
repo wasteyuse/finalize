@@ -1,3 +1,4 @@
+
 import React from "react";
 import { StarRating } from "@/components/ui/StarRating";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
@@ -27,7 +28,7 @@ export const CustomerTestimonials: React.FC<CustomerTestimonialsProps> = ({
     date: "March 15, 2023",
     comment: "I was skeptical at first, but this product is amazing! My skin feels so smooth after using it. No more razor bumps or cuts. Definitely worth the money.",
     verified: true,
-    image: "https://images.unsplash.com/photo-1582562124811-c09040d0a901"
+    image: "/lovable-uploads/8f1a0bcb-63cd-407d-a8c5-a45102cc6834.png"
   }, {
     id: 2,
     name: "Sarah T.",
