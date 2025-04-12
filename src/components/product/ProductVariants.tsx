@@ -137,7 +137,7 @@ export const ProductVariants: React.FC<ProductVariantsProps> = ({
           <img src={bonusImage} alt="Free Bonus" className="w-8 h-7 object-contain" />
         </div>
         <div className="text-white text-xs max-sm:mx-0 max-sm:my-1 flex items-center">
-          <span className="font-bold mr-1">+ FREE</span>
+          <span className="font-bold mr-1">+ FREE SHIPPING</span>
           <span className="opacity-90">Body scrub</span>
         </div>
       </div>
