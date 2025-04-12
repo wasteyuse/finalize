@@ -1,52 +1,38 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Star, Check, Plane, Clock, ZapOff, ChevronLeft, ChevronRight, Quote } from "lucide-react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
-
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 interface CustomerTestimonialsProps {
   rating: number;
   reviewCount: number;
 }
-
 export const CustomerTestimonials: React.FC<CustomerTestimonialsProps> = ({
   rating,
   reviewCount
 }) => {
-  const testimonials = [
-    {
-      id: 1,
-      name: "Sarah J.",
-      avatar: "/lovable-uploads/34f6cdb8-7a6d-46c2-9c8a-da363ec21d67.png",
-      rating: 5,
-      text: "Absolutely in love with my RememberFrame! The crystal-clear display brings my memories to life. Perfect gift for my parents who adore seeing the grandkids' photos update automatically.",
-      datePosted: "March 2023"
-    },
-    {
-      id: 2,
-      name: "Michael T.",
-      avatar: "/lovable-uploads/34f6cdb8-7a6d-46c2-9c8a-da363ec21d67.png",
-      rating: 5, 
-      text: "I've tried other digital frames before but RememberFrame is in a league of its own! The setup was incredibly easy and the app works flawlessly. Worth every penny!",
-      datePosted: "April 2023"
-    },
-    {
-      id: 3,
-      name: "Jennifer K.",
-      avatar: "/lovable-uploads/34f6cdb8-7a6d-46c2-9c8a-da363ec21d67.png",
-      rating: 5,
-      text: "Gave this to my grandmother who lives states away. Now she can see photos of our family instantly when I upload them. She calls me every time new pictures appear!",
-      datePosted: "February 2023"
-    }
-  ];
-  
+  const testimonials = [{
+    id: 1,
+    name: "Sarah J.",
+    avatar: "/lovable-uploads/34f6cdb8-7a6d-46c2-9c8a-da363ec21d67.png",
+    rating: 5,
+    text: "Absolutely in love with my RememberFrame! The crystal-clear display brings my memories to life. Perfect gift for my parents who adore seeing the grandkids' photos update automatically.",
+    datePosted: "March 2023"
+  }, {
+    id: 2,
+    name: "Michael T.",
+    avatar: "/lovable-uploads/34f6cdb8-7a6d-46c2-9c8a-da363ec21d67.png",
+    rating: 5,
+    text: "I've tried other digital frames before but RememberFrame is in a league of its own! The setup was incredibly easy and the app works flawlessly. Worth every penny!",
+    datePosted: "April 2023"
+  }, {
+    id: 3,
+    name: "Jennifer K.",
+    avatar: "/lovable-uploads/34f6cdb8-7a6d-46c2-9c8a-da363ec21d67.png",
+    rating: 5,
+    text: "Gave this to my grandmother who lives states away. Now she can see photos of our family instantly when I upload them. She calls me every time new pictures appear!",
+    datePosted: "February 2023"
+  }];
   return <div className="flex flex-col items-center text-center max-w-lg mx-auto my-12">
       <h2 className="font-bold text-[#333] mb-2 text-2xl">Look At How Others Are Loving Their RememberFrame</h2>
       
@@ -54,7 +40,7 @@ export const CustomerTestimonials: React.FC<CustomerTestimonialsProps> = ({
         Real Reviews From Real People
       </p>
       
-      <Button className="bg-[#7069BC] hover:bg-[#8A84D8] text-white font-bold text-lg py-6 px-12 rounded-md uppercase tracking-wide shadow-md hover:shadow-lg transition-all w-full max-w-xs">
+      <Button className="bg-[#7069BC] hover:bg-[#8A84D8] text-white font-bold py-6 px-12 rounded-md uppercase tracking-wide shadow-md hover:shadow-lg transition-all w-full max-w-xs text-xl">
         CLAIM OFFER
       </Button>
       
@@ -74,8 +60,7 @@ export const CustomerTestimonials: React.FC<CustomerTestimonialsProps> = ({
         
         <Carousel className="w-full">
           <CarouselContent>
-            {testimonials.map(testimonial => (
-              <CarouselItem key={testimonial.id} className="md:basis-1/3">
+            {testimonials.map(testimonial => <CarouselItem key={testimonial.id} className="md:basis-1/3">
                 <div className="bg-white rounded-xl shadow-md p-6 text-left flex flex-col h-full transform transition-all duration-200 hover:shadow-lg hover:-translate-y-1 border border-[#F0EEFF]">
                   <div className="absolute -top-1 -left-1">
                     <Quote className="w-8 h-8 text-[#7069BC]/20" strokeWidth={1} />
@@ -95,9 +80,7 @@ export const CustomerTestimonials: React.FC<CustomerTestimonialsProps> = ({
                   </div>
                   
                   <div className="flex mb-3">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-[#7069BC] text-[#7069BC]" strokeWidth={0.5} />
-                    ))}
+                    {[...Array(testimonial.rating)].map((_, i) => <Star key={i} className="w-4 h-4 fill-[#7069BC] text-[#7069BC]" strokeWidth={0.5} />)}
                   </div>
                   
                   <p className="text-sm text-[#4D4D4D] flex-1 italic">&ldquo;{testimonial.text}&rdquo;</p>
@@ -109,8 +92,7 @@ export const CustomerTestimonials: React.FC<CustomerTestimonialsProps> = ({
                     <span className="text-xs text-[#A2A1B3]">Posted {testimonial.datePosted}</span>
                   </div>
                 </div>
-              </CarouselItem>
-            ))}
+              </CarouselItem>)}
           </CarouselContent>
           <CarouselPrevious className="absolute -left-4 lg:-left-5 top-1/2 -translate-y-1/2 bg-white shadow-md text-[#5D5682] hover:bg-[#F0EEFF] border-none" />
           <CarouselNext className="absolute -right-4 lg:-right-5 top-1/2 -translate-y-1/2 bg-white shadow-md text-[#5D5682] hover:bg-[#F0EEFF] border-none" />
@@ -129,11 +111,7 @@ export const CustomerTestimonials: React.FC<CustomerTestimonialsProps> = ({
         </p>
         
         <div className="relative rounded-full overflow-hidden w-64 h-64 mx-auto mb-12 shadow-lg border-4 border-white">
-          <img 
-            src="/lovable-uploads/9edf90ca-1b26-434b-b5c6-bf91f9824924.png" 
-            alt="Before and after using Bleame" 
-            className="w-full h-full object-cover"
-          />
+          <img src="/lovable-uploads/9edf90ca-1b26-434b-b5c6-bf91f9824924.png" alt="Before and after using Bleame" className="w-full h-full object-cover" />
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="bg-white/80 backdrop-blur-sm rounded-full p-3 shadow-md">
               <div className="flex text-[#5D5682]">
