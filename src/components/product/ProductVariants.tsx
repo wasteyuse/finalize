@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Check } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useCart } from "@/contexts/CartContext";
+import { CountdownTimer } from "./CountdownTimer";
 
 interface Variant {
   id: string;
@@ -136,6 +137,9 @@ export const ProductVariants: React.FC<ProductVariantsProps> = ({
       >
         CLAIM OFFER
       </button>
+      
+      {/* Add the countdown timer here */}
+      <CountdownTimer initialMinutes={16} initialSeconds={59} />
       
       <div className="text-xs text-center text-[#8A8A8A] mb-4">
         Free shipping on orders over $50
