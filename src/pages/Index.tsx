@@ -92,7 +92,6 @@ const Index = () => {
         </div>
         
         <CustomerTestimonials 
-          testimonialImage="/lovable-uploads/34f6cdb8-7a6d-46c2-9c8a-da363ec21d67.png"
           rating={4.8}
           reviewCount={1319}
         />

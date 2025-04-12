@@ -4,26 +4,16 @@ import { Button } from "@/components/ui/button";
 import { Star } from "lucide-react";
 
 interface CustomerTestimonialsProps {
-  testimonialImage: string;
   rating: number;
   reviewCount: number;
 }
 
 export const CustomerTestimonials: React.FC<CustomerTestimonialsProps> = ({
-  testimonialImage,
   rating,
   reviewCount
 }) => {
   return (
     <div className="flex flex-col items-center text-center max-w-lg mx-auto my-12">
-      <div className="w-full max-w-md mb-6">
-        <img 
-          src={testimonialImage} 
-          alt="Customer testimonial" 
-          className="w-full h-auto rounded-lg shadow-md"
-        />
-      </div>
-      
       <h2 className="text-3xl font-bold text-[#333] mb-2">
         Look At How Others Are Loving Their Bleame
       </h2>
