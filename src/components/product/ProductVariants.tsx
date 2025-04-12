@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Check } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -121,13 +120,13 @@ export const ProductVariants: React.FC<ProductVariantsProps> = ({
         </div>
       ))}
       
-      <div className="flex items-center bg-gradient-to-r from-[#7069BC] to-[#8A84D8] p-2.5 rounded-md shadow-sm mt-2 max-sm:flex-col max-sm:text-center overflow-hidden">
-        <div className="bg-white/15 rounded-lg p-1 mr-3 flex-shrink-0 max-sm:mx-auto max-sm:mb-1.5">
-          <img src={bonusImage} alt="Free Bonus" className="w-11 h-9 object-contain" />
+      <div className="flex items-center bg-gradient-to-r from-[#7069BC] to-[#8A84D8] p-1.5 rounded-md shadow-sm mt-2 max-sm:flex-col max-sm:text-center overflow-hidden">
+        <div className="bg-white/15 rounded-lg p-1 mr-2 flex-shrink-0 max-sm:mx-auto max-sm:mb-1.5">
+          <img src={bonusImage} alt="Free Bonus" className="w-8 h-7 object-contain" />
         </div>
-        <div className="text-white text-sm max-sm:mx-0 max-sm:my-1">
+        <div className="text-white text-xs max-sm:mx-0 max-sm:my-1">
           <span className="font-bold mr-1">+ FREE</span>
-          <span className="opacity-90">Body scrub for silky & shiny skin</span>
+          <span className="opacity-90">Body scrub</span>
         </div>
       </div>
       
@@ -138,7 +137,6 @@ export const ProductVariants: React.FC<ProductVariantsProps> = ({
         CLAIM OFFER
       </button>
       
-      {/* Add the countdown timer here */}
       <CountdownTimer initialMinutes={16} initialSeconds={59} />
       
       <div className="text-xs text-center text-[#8A8A8A] mb-4">
