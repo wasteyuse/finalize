@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { User } from 'lucide-react';
@@ -17,7 +18,7 @@ export const Header: React.FC = () => {
 
           {/* Center Section - Logo */}
           <div className="absolute left-1/2 transform -translate-x-1/2">
-            <Link to="/" className="block font-bold text-xl text-[#7069BC]">
+            <Link to="/" className="block font-bold text-xl text-[#cc1653]">
               Bleame
             </Link>
           </div>

@@ -71,7 +71,7 @@ export const ProductVariants: React.FC<ProductVariantsProps> = ({
             key={variant.id}
             className={`flex items-center border relative p-5 rounded-xl shadow-sm py-[14px] ${
               selectedVariant === variant.id
-                ? "border-[#7069BC] bg-[#F9F8FF]"
+                ? "border-[#cc1653] bg-[#FFF5F8]"
                 : "border-gray-200 bg-white"
             }`}
           >
@@ -85,12 +85,12 @@ export const ProductVariants: React.FC<ProductVariantsProps> = ({
                 htmlFor={variant.id}
                 className={`flex h-5 w-5 items-center justify-center rounded-full border ${
                   selectedVariant === variant.id
-                    ? "border-[#7069BC]"
+                    ? "border-[#cc1653]"
                     : "border-gray-300"
                 }`}
               >
                 {selectedVariant === variant.id ? (
-                  <Circle className="h-3 w-3 fill-[#7069BC] text-[#7069BC]" />
+                  <Circle className="h-3 w-3 fill-[#cc1653] text-[#cc1653]" />
                 ) : null}
               </label>
             </div>
@@ -102,19 +102,19 @@ export const ProductVariants: React.FC<ProductVariantsProps> = ({
                 <span className="text-base font-bold text-[#4D4D4D]">
                   {variant.title}
                 </span>
-                <span className="text-xs font-bold bg-[#E5DEFF] px-2 py-0.5 rounded-full">
+                <span className="text-xs font-bold bg-[#FFEBF0] px-2 py-0.5 rounded-full">
                   SAVE ${variant.saveAmount}
                 </span>
               </div>
               
               {variant.shipping && (
-                <div className="text-xs text-[#7069BC] font-medium mt-0.5">
+                <div className="text-xs text-[#cc1653] font-medium mt-0.5">
                   {variant.shipping}
                 </div>
               )}
               
               <div className="flex items-center gap-2 mt-1">
-                <div className="text-base font-bold text-[#7069BC]">
+                <div className="text-base font-bold text-[#cc1653]">
                   ${variant.price}
                 </div>
                 <div className="text-xs text-[#8A8A8A] line-through">
@@ -123,7 +123,7 @@ export const ProductVariants: React.FC<ProductVariantsProps> = ({
               </div>
             </div>
             
-            <div className="text-xl font-bold text-[#7069BC] ml-2">
+            <div className="text-xl font-bold text-[#cc1653] ml-2">
               ${variant.price}
             </div>
           </div>
@@ -139,7 +139,7 @@ export const ProductVariants: React.FC<ProductVariantsProps> = ({
         >
           <Button 
             onClick={handleAddToCart} 
-            className="w-full bg-[#7069BC] hover:bg-[#5d58a3] text-white px-4 rounded text-xl py-[22px] font-bold"
+            className="w-full bg-[#cc1653] hover:bg-[#a61244] text-white px-4 rounded text-xl py-[22px] font-bold"
           >
             CLAIM OFFER
           </Button>
@@ -158,4 +158,3 @@ export const ProductVariants: React.FC<ProductVariantsProps> = ({
     </div>
   );
 };
-

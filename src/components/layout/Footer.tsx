@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Input } from "@/components/ui/input";
@@ -75,7 +76,7 @@ export const Footer = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-2">
                 <Input type="email" placeholder="Enter your email" className="bg-[#2A2F3C] border-none text-white placeholder:text-gray-400" />
-                <Button className="bg-[#7069BC] hover:bg-[#8A84D8] text-white">
+                <Button className="bg-[#cc1653] hover:bg-[#a61244] text-white">
                   Subscribe <ChevronRight className="w-4 h-4 ml-1" />
                 </Button>
               </div>
@@ -89,8 +90,8 @@ export const Footer = () => {
             <h2 className="text-xl font-bold mb-4">Quick Links</h2>
             <ul className="space-y-2">
               {footerLinks.navigation.map((link, index) => <li key={index}>
-                  <Link to={link.href} className="text-gray-300 hover:text-[#9b87f5] transition-colors flex items-center">
-                    <ChevronRight className="w-4 h-4 mr-1 text-[#7069BC]" />
+                  <Link to={link.href} className="text-gray-300 hover:text-[#ff6e96] transition-colors flex items-center">
+                    <ChevronRight className="w-4 h-4 mr-1 text-[#cc1653]" />
                     {link.title}
                   </Link>
                 </li>)}

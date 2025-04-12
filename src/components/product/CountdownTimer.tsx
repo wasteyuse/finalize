@@ -30,7 +30,7 @@ export const CountdownTimer: React.FC<CountdownTimerProps> = ({
   }, [minutes, seconds]);
 
   return (
-    <div className="flex items-center justify-center w-full px-4 py-3 mt-2 mb-4 bg-gradient-to-r from-[#7069BC] to-[#8A84D8] rounded-xl shadow-md">
+    <div className="flex items-center justify-center w-full px-4 py-3 mt-2 mb-4 bg-gradient-to-r from-[#cc1653] to-[#e14e7d] rounded-xl shadow-md">
       <div className="flex items-center justify-center gap-3">
         <Clock className="w-6 h-6 text-white/90" strokeWidth={2.5} />
         <div className="text-white text-sm font-medium">

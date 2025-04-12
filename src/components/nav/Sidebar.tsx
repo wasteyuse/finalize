@@ -89,7 +89,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
             transition={{ duration: 0.3, ease: 'easeOut' }}
           >
             <div className="flex items-center justify-between p-4 border-b">
-              <h2 className="text-lg font-semibold text-[#7069BC]">Navigation</h2>
+              <h2 className="text-lg font-semibold text-[#cc1653]">Navigation</h2>
               <Button 
                 variant="ghost" 
                 size="icon" 
@@ -106,7 +106,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
                   <li key={index}>
                     <Link 
                       to={item.path} 
-                      className="flex items-center gap-3 px-4 py-3 rounded-md text-gray-700 dark:text-gray-200 hover:bg-[#F3F2FF] dark:hover:bg-gray-800 hover:text-[#7069BC] dark:hover:text-[#9b87f5] transition-colors group"
+                      className="flex items-center gap-3 px-4 py-3 rounded-md text-gray-700 dark:text-gray-200 hover:bg-[#FFF5F8] dark:hover:bg-gray-800 hover:text-[#cc1653] dark:hover:text-[#ff6e96] transition-colors group"
                       onClick={onClose}
                     >
                       {item.icon}
