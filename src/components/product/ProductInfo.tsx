@@ -48,8 +48,7 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({
       </div>
       <div className="w-full h-px bg-[#D9D9D9] mx-0 my-5" />
       <div className="text-sm font-semibold text-[#2E2A39] leading-6 mb-5">
-        Shave armpits, legs, face and bikini area - without painful waxing or
-        razor cuts ever again!
+        Perfect for showcasing your cherished moments wherever you go!
       </div>
       <div className="flex flex-col gap-2.5 mb-5">
         {features.map((feature, index) => (
