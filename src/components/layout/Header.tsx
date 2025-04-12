@@ -1,8 +1,9 @@
 
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, User } from 'lucide-react';
+import { User } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { MainNavigation } from '@/components/nav/MainNavigation';
 
 export const Header: React.FC = () => {
   useEffect(() => {
@@ -17,9 +18,7 @@ export const Header: React.FC = () => {
         <div className="flex items-center justify-between h-16">
           {/* Left Section - Navigation Icons */}
           <div className="flex items-center space-x-4">
-            <button className="p-2 rounded-full hover:bg-gray-100 transition-colors" aria-label="Menu">
-              <Menu className="w-5 h-5" />
-            </button>
+            <MainNavigation />
             
             <button className="p-2 rounded-full hover:bg-gray-100 transition-colors" aria-label="Profile">
               <User className="w-5 h-5" />
