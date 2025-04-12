@@ -4,8 +4,7 @@ import { Button } from "@/components/ui/button";
 import { StarRating } from "@/components/ui/StarRating";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Card, CardContent } from "@/components/ui/card";
-import { ChevronLeft, ChevronRight, Pause, Play } from "lucide-react";
-import { Slider } from "@/components/ui/slider";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface Review {
   id: number;
@@ -58,8 +57,7 @@ export const CustomerTestimonials: React.FC<CustomerTestimonialsProps> = ({
   ];
 
   const [currentReview, setCurrentReview] = useState(0);
-  const [autoScroll, setAutoScroll] = useState(true);
-  const [scrollSpeed, setScrollSpeed] = useState(3); // Default to 3 seconds
+  const scrollSpeed = 3; // Fixed at 3 seconds
 
   const nextReview = useCallback(() => {
     setCurrentReview(prev => (prev + 1) % reviews.length);
@@ -69,25 +67,15 @@ export const CustomerTestimonials: React.FC<CustomerTestimonialsProps> = ({
     setCurrentReview(prev => (prev === 0 ? reviews.length - 1 : prev - 1));
   };
 
-  const handleSpeedChange = (value: number[]) => {
-    setScrollSpeed(value[0]);
-  };
-
-  const toggleAutoScroll = () => {
-    setAutoScroll(!autoScroll);
-  };
-
   useEffect(() => {
-    let interval: NodeJS.Timeout;
-    if (autoScroll) {
-      interval = setInterval(() => {
-        nextReview();
-      }, scrollSpeed * 1000); // Convert to milliseconds
-    }
+    const interval = setInterval(() => {
+      nextReview();
+    }, scrollSpeed * 1000); // Convert to milliseconds
+    
     return () => {
-      if (interval) clearInterval(interval);
+      clearInterval(interval);
     };
-  }, [autoScroll, nextReview, scrollSpeed]);
+  }, [nextReview, scrollSpeed]);
 
   return (
     <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 my-8">
@@ -178,36 +166,6 @@ export const CustomerTestimonials: React.FC<CustomerTestimonialsProps> = ({
               aria-label={`Go to review ${index + 1}`}
             />
           ))}
-        </div>
-      </div>
-      
-      {/* Auto-scroll Controls */}
-      <div className="flex flex-col items-center mt-4 space-y-2 px-4 mb-6">
-        <div className="flex items-center gap-2 mb-2">
-          <button 
-            className="w-8 h-8 flex items-center justify-center bg-gray-100 rounded-full hover:bg-gray-200 transition-colors"
-            onClick={toggleAutoScroll}
-            aria-label={autoScroll ? "Pause auto-scroll" : "Start auto-scroll"}
-          >
-            {autoScroll ? <Pause className="w-4 h-4 text-gray-700" /> : <Play className="w-4 h-4 text-gray-700" />}
-          </button>
-          <span className="text-xs text-gray-500">
-            {autoScroll ? `Auto-scroll: ${scrollSpeed}s` : "Auto-scroll paused"}
-          </span>
-        </div>
-        
-        <div className="flex items-center justify-between w-full max-w-xs">
-          <span className="text-xs text-gray-500">Slower</span>
-          <Slider
-            defaultValue={[3]}
-            max={5}
-            min={1}
-            step={1}
-            onValueChange={handleSpeedChange}
-            className="w-full max-w-[200px] mx-2"
-            disabled={!autoScroll}
-          />
-          <span className="text-xs text-gray-500">Faster</span>
         </div>
       </div>
       
