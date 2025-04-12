@@ -47,12 +47,20 @@ export const ProductGallery: React.FC<ProductGalleryProps> = ({
     setAutoScroll(!autoScroll);
   };
 
-  return <div className="mb-0">
+  return (
+    <div className="mb-0">
       {/* Main Image Display */}
       <div className="relative w-full h-[329px] mb-4 overflow-hidden rounded-xl shadow-md">
-        {images.map((image, index) => <div key={index} className={`absolute inset-0 w-full h-full transition-opacity duration-500 ease-in-out ${index === currentImage ? "opacity-100" : "opacity-0"}`}>
-            <img src={image} alt={`Product view ${index + 1}`} className={`w-full h-full object-cover rounded-xl ${isZoomed ? "scale-125 cursor-zoom-out" : "cursor-zoom-in"} transition-transform duration-300`} onClick={() => setIsZoomed(!isZoomed)} />
-          </div>)}
+        {images.map((image, index) => (
+          <div key={index} className={`absolute inset-0 w-full h-full transition-opacity duration-500 ease-in-out ${index === currentImage ? "opacity-100" : "opacity-0"}`}>
+            <img 
+              src={image} 
+              alt={`Product view ${index + 1}`} 
+              className={`w-full h-full object-cover rounded-xl ${isZoomed ? "scale-125 cursor-zoom-out" : "cursor-zoom-in"} transition-transform duration-300`} 
+              onClick={() => setIsZoomed(!isZoomed)} 
+            />
+          </div>
+        ))}
         
         {/* Image Navigation Controls */}
         <div className="absolute inset-0 flex items-center justify-between opacity-0 hover:opacity-100 transition-opacity duration-200 px-[16px]">
@@ -85,12 +93,17 @@ export const ProductGallery: React.FC<ProductGalleryProps> = ({
       {/* Thumbnail Carousel */}
       <Carousel className="w-full max-w-[342px] mx-auto">
         <CarouselContent className="gap-2 px-[24px] py-[5px]">
-          {thumbnails.map((thumbnail, index) => <CarouselItem key={index} className="basis-1/4 pl-1 px-[2px]">
-              <button className={`relative w-full aspect-square rounded-lg overflow-hidden transition-all duration-300 ${index === currentImage ? "ring-2 ring-[#7069BC] scale-105" : "opacity-70 hover:opacity-100"}`} onClick={() => handleThumbnailClick(index)}>
+          {thumbnails.map((thumbnail, index) => (
+            <CarouselItem key={index} className="basis-1/4 pl-1 px-[2px]">
+              <button 
+                className={`relative w-full aspect-square rounded-lg overflow-hidden transition-all duration-300 ${index === currentImage ? "ring-2 ring-[#7069BC] scale-105" : "opacity-70 hover:opacity-100"}`} 
+                onClick={() => handleThumbnailClick(index)}
+              >
                 <img src={thumbnail} alt={`Thumbnail ${index + 1}`} className="w-full h-full object-cover" />
                 {index === currentImage && <div className="absolute inset-0 bg-[#7069BC]/10" />}
               </button>
-            </CarouselItem>)}
+            </CarouselItem>
+          ))}
         </CarouselContent>
       </Carousel>
       
@@ -100,5 +113,6 @@ export const ProductGallery: React.FC<ProductGalleryProps> = ({
           {autoScroll ? "Auto-scroll enabled" : "Auto-scroll disabled"}
         </span>
       </div>
-    </div>;
+    </div>
+  );
 };
