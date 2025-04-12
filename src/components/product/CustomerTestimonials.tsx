@@ -28,7 +28,7 @@ export const CustomerTestimonials: React.FC<CustomerTestimonialsProps> = ({
     date: "March 15, 2023",
     comment: "I was skeptical at first, but this product is amazing! My skin feels so smooth after using it. No more razor bumps or cuts. Definitely worth the money.",
     verified: true,
-    image: "/lovable-uploads/8f1a0bcb-63cd-407d-a8c5-a45102cc6834.png"
+    image: "/lovable-uploads/92531c3b-e4f0-4864-8cb7-898950642a38.png"
   }, {
     id: 2,
     name: "Sarah T.",
