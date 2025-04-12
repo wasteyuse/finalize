@@ -1,4 +1,3 @@
-
 import React from "react";
 
 export const TopBanner: React.FC = () => {
@@ -47,7 +46,7 @@ export const TopBanner: React.FC = () => {
           </defs>
         </svg>
       ),
-      text: "LIMITED TIME: SAVE UP TO 48%"
+      text: "175,000+ HAPPY CUSTOMERS"
     }
   ];
 
@@ -66,4 +65,3 @@ export const TopBanner: React.FC = () => {
     </div>
   );
 };
-
