@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { useCart } from "@/contexts/CartContext";
 import { CountdownTimer } from "./CountdownTimer";
@@ -149,7 +148,7 @@ export const ProductVariants: React.FC<ProductVariantsProps> = ({
       <CountdownTimer initialMinutes={16} initialSeconds={59} />
       
       <div className="text-xs text-center text-[#8A8A8A] mb-4">
-        Free shipping on orders over $50
+        Secure & Fast Checkout
       </div>
       
       <div className="flex justify-center">
