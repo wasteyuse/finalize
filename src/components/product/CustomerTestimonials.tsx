@@ -1,10 +1,8 @@
 
-import React, { useState } from "react";
-import { Button } from "@/components/ui/button";
+import React from "react";
 import { StarRating } from "@/components/ui/StarRating";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Card, CardContent } from "@/components/ui/card";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface Review {
   id: number;
@@ -56,18 +54,6 @@ export const CustomerTestimonials: React.FC<CustomerTestimonialsProps> = ({
     }
   ];
 
-  const [currentReview, setCurrentReview] = useState(0);
-
-  const nextReview = () => {
-    setCurrentReview(prev => (prev + 1) % reviews.length);
-  };
-
-  const prevReview = () => {
-    setCurrentReview(prev => (prev === 0 ? reviews.length - 1 : prev - 1));
-  };
-
-  // Removed the useEffect hook that was controlling auto-scrolling
-
   return (
     <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 my-8">
       <div className="text-center mb-6">
@@ -81,83 +67,41 @@ export const CustomerTestimonials: React.FC<CustomerTestimonialsProps> = ({
         <p className="text-gray-500 text-sm">Based on 1,319+ Happy Customers</p>
       </div>
       
-      {/* Review Slider */}
-      <div className="relative mb-8">
-        <div className="overflow-hidden">
-          <div className="transition-transform duration-500 ease-in-out" 
-               style={{ transform: `translateX(-${currentReview * 100}%)`, width: `${reviews.length * 100}%`, display: 'flex' }}>
-            {reviews.map((review, index) => (
-              <div key={review.id} className="w-full flex-shrink-0 px-4">
-                <Card className="overflow-hidden border-gray-100 h-full">
-                  <CardContent className="p-4">
-                    <div className="flex justify-between items-start mb-4">
-                      <div className="flex items-center">
-                        <Avatar className="h-10 w-10 mr-3 bg-[#7069BC]">
-                          {review.image ? <AvatarImage src={review.image} alt={review.name} /> : <AvatarFallback>{review.name.charAt(0)}</AvatarFallback>}
-                        </Avatar>
-                        <div>
-                          <p className="font-medium">{review.name}</p>
-                          <div className="flex items-center gap-2">
-                            <StarRating rating={review.rating} size={14} />
-                          </div>
-                        </div>
-                      </div>
-                      {review.verified && (
-                        <div className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">
-                          Verified Purchase
-                        </div>
-                      )}
+      {/* Vertical Reviews Display */}
+      <div className="space-y-4">
+        {reviews.map((review) => (
+          <Card key={review.id} className="border-gray-100">
+            <CardContent className="p-4">
+              <div className="flex justify-between items-start mb-4">
+                <div className="flex items-center">
+                  <Avatar className="h-10 w-10 mr-3 bg-[#7069BC]">
+                    {review.image ? <AvatarImage src={review.image} alt={review.name} /> : <AvatarFallback>{review.name.charAt(0)}</AvatarFallback>}
+                  </Avatar>
+                  <div>
+                    <p className="font-medium">{review.name}</p>
+                    <div className="flex items-center gap-2">
+                      <StarRating rating={review.rating} size={14} />
                     </div>
-                    
-                    <p className="text-gray-700 text-sm mb-4">{review.comment}</p>
-                    
-                    {/* Review image preview */}
-                    {review.image && (
-                      <div className="mt-3">
-                        <img src={review.image} alt="Product result" className="rounded-lg w-full max-h-48 object-cover" />
-                      </div>
-                    )}
-                  </CardContent>
-                </Card>
+                  </div>
+                </div>
+                {review.verified && (
+                  <div className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">
+                    Verified Purchase
+                  </div>
+                )}
               </div>
-            ))}
-          </div>
-        </div>
-        
-        {/* Navigation Controls */}
-        <div className="absolute inset-y-0 left-0 flex items-center">
-          <button 
-            onClick={prevReview}
-            className="w-8 h-8 flex items-center justify-center bg-white/80 backdrop-blur-sm rounded-full shadow-md hover:bg-white transition-colors transform -translate-x-1/2"
-            aria-label="Previous review"
-          >
-            <ChevronLeft className="w-5 h-5 text-gray-700" />
-          </button>
-        </div>
-        
-        <div className="absolute inset-y-0 right-0 flex items-center">
-          <button 
-            onClick={nextReview}
-            className="w-8 h-8 flex items-center justify-center bg-white/80 backdrop-blur-sm rounded-full shadow-md hover:bg-white transition-colors transform translate-x-1/2"
-            aria-label="Next review"
-          >
-            <ChevronRight className="w-5 h-5 text-gray-700" />
-          </button>
-        </div>
-        
-        {/* Pagination Indicators */}
-        <div className="flex justify-center mt-4 gap-2">
-          {reviews.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentReview(index)}
-              className={`w-2 h-2 rounded-full transition-all ${
-                index === currentReview ? "bg-[#7069BC] w-4" : "bg-gray-300"
-              }`}
-              aria-label={`Go to review ${index + 1}`}
-            />
-          ))}
-        </div>
+              
+              <p className="text-gray-700 text-sm mb-4">{review.comment}</p>
+              
+              {/* Review image preview */}
+              {review.image && (
+                <div className="mt-3">
+                  <img src={review.image} alt="Product result" className="rounded-lg w-full max-h-48 object-cover" />
+                </div>
+              )}
+            </CardContent>
+          </Card>
+        ))}
       </div>
       
       <div className="mt-8 flex flex-col items-center">
