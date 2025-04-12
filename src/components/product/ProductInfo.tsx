@@ -1,3 +1,4 @@
+
 import React from "react";
 import { StarRating } from "../ui/StarRating";
 
@@ -40,8 +41,8 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({
         <div className="text-lg text-[#2E2A39] line-through opacity-70">
           ${originalPrice}
         </div>
-        <div className="text-[17px] font-bold text-[#7069BC]">${salePrice}</div>
-        <div className="text-[13px] font-bold text-[#2E2A3A] uppercase bg-[#D6D2FF] px-[9px] py-[5px] rounded-[50px]">
+        <div className="text-[17px] font-bold text-[#cc1653]">${salePrice}</div>
+        <div className="text-[13px] font-bold text-[#2E2A3A] uppercase bg-[#FFEBF0] px-[9px] py-[5px] rounded-[50px]">
           save {discount}%
         </div>
       </div>
