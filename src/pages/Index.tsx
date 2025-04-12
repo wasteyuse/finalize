@@ -71,7 +71,7 @@ const Index = () => {
           </div>
           <div>
             <ProductInfo 
-              title="Digital Photo Frame 7\" HD" 
+              title="Digital Photo Frame 7&quot; HD" 
               subtitle="NEWEST MODEL WITH ACRYLIC DESIGN" 
               rating={4.8} 
               reviews={1237} 
