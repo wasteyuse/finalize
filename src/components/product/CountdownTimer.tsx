@@ -30,15 +30,15 @@ export const CountdownTimer: React.FC<CountdownTimerProps> = ({
   }, [minutes, seconds]);
 
   return (
-    <div className="flex items-center justify-center w-full px-4 py-3 mt-2 mb-4 bg-gradient-to-r from-[#FFE29F] to-[#FF719A] rounded-lg shadow-sm">
-      <div className="flex items-center justify-center gap-2">
-        <Clock className="w-5 h-5 text-white" />
-        <div className="text-white font-medium">
+    <div className="flex items-center justify-center w-full px-4 py-3 mt-2 mb-4 bg-gradient-to-r from-[#7069BC] to-[#8A84D8] rounded-xl shadow-md">
+      <div className="flex items-center justify-center gap-3">
+        <Clock className="w-6 h-6 text-white/90" strokeWidth={2.5} />
+        <div className="text-white text-sm font-medium">
           Complete order within{' '}
-          <span className="font-bold">
+          <span className="font-bold bg-white/20 px-2 py-1 rounded-md mx-1">
             {minutes.toString().padStart(2, '0')}:{seconds.toString().padStart(2, '0')}
           </span>{' '}
-          to claim <span className="font-bold">FREE SHIPPING</span>
+          to claim <span className="font-bold uppercase">Free Shipping</span>
         </div>
       </div>
     </div>
