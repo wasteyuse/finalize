@@ -60,7 +60,7 @@ export const ProductVariants: React.FC<ProductVariantsProps> = ({
         </div>
       </div>
       
-      <div className="flex items-center bg-gradient-to-r from-[#7069BC] to-[#8A84D8] p-1.5 rounded-md shadow-sm mt-2 max-sm:flex-col max-sm:text-center overflow-hidden">
+      <div className="flex items-center bg-gradient-to-r from-[#7069BC] to-[#8A84D8] p-1.5 rounded-md shadow-sm mt-2 max-sm:flex-col max-sm:text-center overflow-hidden py-[5px]">
         <div className="bg-white/15 rounded-lg p-1 mr-2 flex-shrink-0 max-sm:mx-auto max-sm:mb-1.5">
           <img src={bonusImage} alt="Free Bonus" className="w-8 h-7 object-contain" />
         </div>
