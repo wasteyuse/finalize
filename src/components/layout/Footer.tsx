@@ -8,9 +8,7 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="space-y-4">
             <h3 className="text-xl font-bold">Remember Frame</h3>
-            <p className="text-gray-300">
-              Elevating your golf game with premium equipment and accessories.
-            </p>
+            <p className="text-gray-300">Perfect for showcasing your cherished moments wherever you go. With its stunning acrylic design and long-lasting battery.</p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-300 hover:text-white transition-colors">
                 <Facebook size={20} />
