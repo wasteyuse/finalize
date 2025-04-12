@@ -10,6 +10,7 @@ import Cart from "./pages/Cart";
 import NotFound from "./pages/NotFound";
 import { CartProvider } from "./contexts/CartContext";
 import { Cart as CartSlide } from "./components/cart/Cart";
+import { Header } from "./components/layout/Header";
 
 const queryClient = new QueryClient();
 
@@ -21,6 +22,7 @@ const App = () => (
           <Toaster />
           <Sonner />
           <CartSlide />
+          <Header />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/cart" element={<Cart />} />
