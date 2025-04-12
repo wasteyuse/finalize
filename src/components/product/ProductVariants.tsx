@@ -1,6 +1,6 @@
 
 import React, { useState } from "react";
-import { Check } from "lucide-react";
+import { Check, Package } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useCart } from "@/contexts/CartContext";
 import { CountdownTimer } from "./CountdownTimer";
@@ -85,8 +85,15 @@ export const ProductVariants: React.FC<ProductVariantsProps> = ({
           
           <div className="flex-1">
             <div className="flex items-center flex-wrap gap-2">
-              <span className="text-base font-bold text-[#4D4D4D]">
+              <span className="text-base font-bold text-[#4D4D4D] flex items-center">
                 {variant.title}
+                {variant.title === "2 Pack" && (
+                  <Package 
+                    className="ml-1.5 text-[#7069BC]" 
+                    size={16} 
+                    strokeWidth={2.5} 
+                  />
+                )}
               </span>
               <div className="text-xs font-semibold text-[#7069BC] uppercase bg-[#F0EEFF] px-3 py-1 rounded-full">
                 Save ${variant.savings}
