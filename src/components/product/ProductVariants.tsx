@@ -38,7 +38,7 @@ export const ProductVariants: React.FC<ProductVariantsProps> = ({
     {
       id: "2pack",
       title: "2 Pack",
-      image: "/lovable-uploads/4874238e-a2a5-4740-85d4-6a42ea1bff52.png",
+      image: "/lovable-uploads/fb5d20d1-828f-4d16-92f1-305f7b24bc45.png",
       price: 149,
       originalPrice: 219,
       saveAmount: 70,
