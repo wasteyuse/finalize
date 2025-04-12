@@ -40,7 +40,7 @@ export const CustomerTestimonials: React.FC<CustomerTestimonialsProps> = ({
         Real Reviews From Real People
       </p>
       
-      <Button className="bg-[#7069BC] hover:bg-[#8A84D8] text-white font-bold py-6 px-12 rounded-md uppercase tracking-wide shadow-md hover:shadow-lg transition-all w-full max-w-xs text-xl">
+      <Button className="bg-[#7069BC] hover:bg-[#8A84D8] text-white font-bold rounded-md uppercase tracking-wide shadow-md hover:shadow-lg transition-all w-full max-w-xs text-xl text-center px-[48px] py-[24px]">
         CLAIM OFFER
       </Button>
       
