@@ -47,8 +47,8 @@ export const ProductGallery: React.FC<ProductGalleryProps> = ({
               </button>
             </CarouselItem>)}
         </CarouselContent>
-        <CarouselPrevious className="left-0 bg-white/80 backdrop-blur-sm hover:bg-white" />
-        <CarouselNext className="right-0 bg-white/80 backdrop-blur-sm hover:bg-white" />
+        
+        
       </Carousel>
       
       {/* Image Indicator Dots */}
