@@ -4,7 +4,7 @@ import { Separator } from "../ui/separator";
 import { Link } from "react-router-dom";
 import { Facebook, Instagram, Twitter } from "lucide-react";
 
-const Footer = () => {
+export const Footer = () => {
   return (
     <footer className="bg-black text-white py-16">
       <div className="container mx-auto px-4">

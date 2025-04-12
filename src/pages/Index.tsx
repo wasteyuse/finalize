@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { TopBanner } from '@/components/product/TopBanner';
 import { ProductGallery } from '@/components/product/ProductGallery';
@@ -7,6 +8,7 @@ import ProductFAQ from '@/components/product/ProductFAQ';
 import { CustomerTestimonials } from '@/components/product/CustomerTestimonials';
 import { ProductFeatures } from '@/components/product/ProductFeatures';
 import { Footer } from '@/components/layout/Footer';
+
 const Index = () => {
   // Updated image URLs with the new digital photo frame images
   const productImages = ["/lovable-uploads/382be783-f28d-4d1b-866e-ba24b615f0e1.png", "/lovable-uploads/ca028cff-8c40-4cd4-8e85-ff5db5092225.png", "/lovable-uploads/430a706e-02c6-41f2-93b7-809ae39ee122.png", "/lovable-uploads/26d78a33-1d58-44e9-9db6-367aa3882f93.png"];
