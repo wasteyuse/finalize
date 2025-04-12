@@ -5,6 +5,7 @@ import { ProductGallery } from '@/components/product/ProductGallery';
 import { ProductInfo } from '@/components/product/ProductInfo';
 import { ProductVariants } from '@/components/product/ProductVariants';
 import { ProductFAQ } from '@/components/product/ProductFAQ';
+import { CustomerTestimonials } from '@/components/product/CustomerTestimonials';
 
 const Index = () => {
   const productImages = ["https://cdn.builder.io/api/v1/image/assets/TEMP/0aa3456abb54e3568a18456b3918e59e808841fb", "https://cdn.builder.io/api/v1/image/assets/TEMP/29a2dd783416b0f665be147ee7f8e2df6f89eef4"];
@@ -89,6 +90,13 @@ const Index = () => {
             />
           </div>
         </div>
+        
+        <CustomerTestimonials 
+          testimonialImage="/lovable-uploads/34f6cdb8-7a6d-46c2-9c8a-da363ec21d67.png"
+          rating={4.8}
+          reviewCount={1319}
+        />
+        
         <div className="max-w-3xl mx-auto mt-12">
           <h2 className="text-xl font-bold mb-4">Frequently Asked Questions</h2>
           <ProductFAQ items={faqItems} />
