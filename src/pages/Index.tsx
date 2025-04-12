@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { TopBanner } from '@/components/product/TopBanner';
 import { ProductGallery } from '@/components/product/ProductGallery';
@@ -5,7 +6,9 @@ import { ProductInfo } from '@/components/product/ProductInfo';
 import { ProductVariants } from '@/components/product/ProductVariants';
 import { ProductFAQ } from '@/components/product/ProductFAQ';
 import { CustomerTestimonials } from '@/components/product/CustomerTestimonials';
+import { ProductFeatures } from '@/components/product/ProductFeatures';
 import { Footer } from '@/components/layout/Footer';
+
 const Index = () => {
   // Use the actual image URLs from the Builder.io design
   const productImages = ["https://cdn.builder.io/api/v1/image/assets/TEMP/0aa3456abb54e3568a18456b3918e59e808841fb", "https://cdn.builder.io/api/v1/image/assets/TEMP/29a2dd783416b0f665be147ee7f8e2df6f89eef4"];
@@ -31,6 +34,7 @@ const Index = () => {
     question: "How long does it last?",
     answer: "Each Bleame crystal can last for months with proper care and regular use."
   }];
+  
   return <div className="flex flex-col min-h-screen">
       <TopBanner />
       <div className="container max-w-5xl px-4 py-8 mx-auto">
@@ -51,7 +55,12 @@ const Index = () => {
           <ProductFAQ items={faqItems} />
         </div>
       </div>
+      
+      {/* Add the new ProductFeatures component above the footer */}
+      <ProductFeatures />
+      
       <Footer />
     </div>;
 };
+
 export default Index;
