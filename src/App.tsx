@@ -12,7 +12,6 @@ import { CartProvider } from "./contexts/CartContext";
 import { SidebarProvider } from "./contexts/SidebarContext";
 import { Cart as CartSlide } from "./components/cart/Cart";
 import { Header } from "./components/layout/Header";
-// Removed TopBanner import since we'll only use it in Index.tsx
 
 // Add policy pages
 import ShippingPolicy from "./pages/ShippingPolicy";
@@ -32,7 +31,6 @@ const App = () => (
             <Toaster />
             <Sonner />
             <CartSlide />
-            {/* Removed duplicate TopBanner */}
             <Header />
             <Routes>
               <Route path="/" element={<Index />} />
