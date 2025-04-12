@@ -49,9 +49,9 @@
     --ring: 224.3 76.3% 48%;
   }
 
-  /* Apply Devoid font family globally */
+  /* Apply Helvetica font family globally */
   html {
-    font-family: 'Outfit', sans-serif;
+    font-family: 'Helvetica', Arial, sans-serif;
   }
 }
 
