@@ -39,7 +39,7 @@ export const ProductVariants: React.FC<ProductVariantsProps> = ({
     });
   };
   return <div className="mb-6">
-      <div className="flex items-center border relative mb-3 p-5 rounded-xl border-[#7069BC] bg-[#F9F8FF] shadow-sm">
+      <div className="flex items-center border relative mb-3 p-5 rounded-xl border-[#7069BC] bg-[#F9F8FF] shadow-sm py-[14px]">
         <img src={product.image} alt={product.title} className="w-[50px] h-[50px] rounded-lg object-contain mx-3" />
         
         <div className="flex-1">
