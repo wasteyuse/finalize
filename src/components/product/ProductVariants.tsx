@@ -1,9 +1,7 @@
-
 import React from "react";
 import { useCart } from "@/contexts/CartContext";
 import { CountdownTimer } from "./CountdownTimer";
 import { Button } from "@/components/ui/button";
-
 interface ProductVariantsProps {
   product: {
     id: string;
@@ -15,7 +13,6 @@ interface ProductVariantsProps {
   bonusImage: string;
   paymentMethodsImage: string;
 }
-
 export const ProductVariants: React.FC<ProductVariantsProps> = ({
   product,
   bonusImage,
@@ -24,7 +21,6 @@ export const ProductVariants: React.FC<ProductVariantsProps> = ({
   const {
     addToCart
   } = useCart();
-
   const handleAddToCart = () => {
     // Add to cart
     addToCart({
@@ -35,7 +31,6 @@ export const ProductVariants: React.FC<ProductVariantsProps> = ({
       originalPrice: product.originalPrice
     });
   };
-
   return <div className="mb-6">
       <div className="flex items-center border relative mb-3 p-5 rounded-xl border-[#7069BC] bg-[#F9F8FF] shadow-sm py-[14px]">
         <img src={product.image} alt={product.title} className="w-[50px] h-[50px] rounded-lg object-contain mx-3" />
@@ -69,12 +64,7 @@ export const ProductVariants: React.FC<ProductVariantsProps> = ({
       </div>
       
       <div className="my-4">
-        <Button 
-          className="w-full bg-[#7069BC] hover:bg-[#5d58a3] text-white font-semibold py-2 px-4 rounded"
-          onClick={handleAddToCart}
-        >
-          Add to Cart
-        </Button>
+        <Button onClick={handleAddToCart} className="w-full bg-[#7069BC] hover:bg-[#5d58a3] text-white px-4 rounded text-xl py-[22px] font-bold">CLAIM OFFER</Button>
       </div>
       
       <CountdownTimer initialMinutes={16} initialSeconds={59} />
