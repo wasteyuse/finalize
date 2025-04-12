@@ -1,6 +1,8 @@
+
 import React, { useState, useEffect, useCallback } from "react";
 import { ChevronLeft, ChevronRight, ZoomIn, Pause, Play } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
+import { Slider } from "@/components/ui/slider";
 
 interface ProductGalleryProps {
   images: string[];
@@ -14,6 +16,7 @@ export const ProductGallery: React.FC<ProductGalleryProps> = ({
   const [currentImage, setCurrentImage] = useState(0);
   const [isZoomed, setIsZoomed] = useState(false);
   const [autoScroll, setAutoScroll] = useState(true);
+  const [scrollSpeed, setScrollSpeed] = useState(3); // Default to 3 seconds
 
   const handleThumbnailClick = (index: number) => {
     setCurrentImage(index);
@@ -27,17 +30,22 @@ export const ProductGallery: React.FC<ProductGalleryProps> = ({
     setCurrentImage(prev => prev > 0 ? prev - 1 : images.length - 1);
   };
 
+  const handleSpeedChange = (value: number[]) => {
+    // Convert slider value to seconds (1-5 seconds)
+    setScrollSpeed(value[0]);
+  };
+
   useEffect(() => {
     let interval: NodeJS.Timeout;
     if (autoScroll && !isZoomed) {
       interval = setInterval(() => {
         nextImage();
-      }, 3000);
+      }, scrollSpeed * 1000); // Convert to milliseconds
     }
     return () => {
       if (interval) clearInterval(interval);
     };
-  }, [autoScroll, isZoomed, nextImage]);
+  }, [autoScroll, isZoomed, nextImage, scrollSpeed]);
 
   const toggleAutoScroll = () => {
     setAutoScroll(!autoScroll);
@@ -76,9 +84,24 @@ export const ProductGallery: React.FC<ProductGalleryProps> = ({
         </CarouselContent>
       </Carousel>
       
-      <div className="flex justify-center mt-2">
+      <div className="flex flex-col items-center mt-4 space-y-2 px-4">
+        <div className="flex items-center justify-between w-full">
+          <span className="text-xs text-gray-500">Slower</span>
+          <span className="text-xs text-gray-500">Faster</span>
+        </div>
+        
+        <Slider
+          defaultValue={[3]}
+          max={5}
+          min={1}
+          step={1}
+          onValueChange={handleSpeedChange}
+          className="w-full max-w-[300px]"
+          disabled={!autoScroll}
+        />
+        
         <span className="text-xs text-gray-500 flex items-center">
-          {autoScroll ? "Auto-scroll enabled" : "Auto-scroll disabled"}
+          {autoScroll ? `Auto-scroll: ${scrollSpeed}s` : "Auto-scroll disabled"}
         </span>
       </div>
     </div>;
