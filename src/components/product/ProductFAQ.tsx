@@ -16,7 +16,7 @@ const ProductFAQ = ({
           FAQs
           <span className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-12 h-1 bg-primary rounded-full"></span>
         </h2>
-        <p className="text-center text-[#666] max-w-xl mt-4">Everything you need to know about our Remember Frame</p>
+        
       </div>
 
       <div className="max-w-3xl mx-auto w-full">
