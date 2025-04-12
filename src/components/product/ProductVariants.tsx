@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { useCart } from "@/contexts/CartContext";
 import { CountdownTimer } from "./CountdownTimer";
@@ -29,18 +30,18 @@ export const ProductVariants: React.FC<ProductVariantsProps> = ({
       id: "1pack",
       title: "1 Pack",
       image: "/lovable-uploads/fb5d20d1-828f-4d16-92f1-305f7b24bc45.png",
-      price: 89,
+      price: 69, // Updated price
       originalPrice: 129,
-      saveAmount: 40,
+      saveAmount: 60, // Updated save amount
       shipping: ""
     },
     {
       id: "2pack",
       title: "2 Pack",
       image: "/lovable-uploads/4874238e-a2a5-4740-85d4-6a42ea1bff52.png",
-      price: 149,
+      price: 99, // Updated price
       originalPrice: 219,
-      saveAmount: 70,
+      saveAmount: 120, // Updated save amount
       shipping: "Includes FREE shipping"
     }
   ];
@@ -157,3 +158,4 @@ export const ProductVariants: React.FC<ProductVariantsProps> = ({
     </div>
   );
 };
+
