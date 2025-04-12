@@ -55,7 +55,7 @@ export const CustomerTestimonials: React.FC<CustomerTestimonialsProps> = ({
             {rating} out of 5
           </span>
         </div>
-        <p className="text-gray-500 text-sm">Based on {reviewCount} reviews</p>
+        <p className="text-gray-500 text-sm">Based on 1,319+ Happy Customers</p>
       </div>
       
       {/* Individual Reviews */}
