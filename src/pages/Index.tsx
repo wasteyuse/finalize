@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { TopBanner } from '@/components/product/TopBanner';
 import { ProductGallery } from '@/components/product/ProductGallery';
@@ -34,7 +35,7 @@ const Index = () => {
       <TopBanner />
       <div className="container max-w-5xl px-4 py-8 mx-auto">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-          <div className="py-0">
+          <div>
             <ProductGallery images={productImages} thumbnails={thumbnails} />
           </div>
           <div>
