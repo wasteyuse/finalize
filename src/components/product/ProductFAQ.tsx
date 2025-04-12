@@ -10,7 +10,7 @@ interface ProductFAQProps {
 const ProductFAQ = ({
   items
 }: ProductFAQProps) => {
-  return <div className="w-full flex flex-col gap-12 md:px-16 bg-[#F8F7FD] rounded-2xl px-0 py-[13px]">
+  return <div className="w-full flex flex-col gap-12 md:px-16 rounded-2xl px-0 py-[13px] bg-slate-50">
       <div className="flex flex-col items-center w-full gap-3">
         <h2 className="text-3xl font-bold text-[#2E2A39] relative">
           FAQs
