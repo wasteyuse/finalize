@@ -4,7 +4,7 @@ import { TopBanner } from '@/components/product/TopBanner';
 import { ProductGallery } from '@/components/product/ProductGallery';
 import { ProductInfo } from '@/components/product/ProductInfo';
 import { ProductVariants } from '@/components/product/ProductVariants';
-import { ProductFAQ } from '@/components/product/ProductFAQ';
+import ProductFAQ from '@/components/product/ProductFAQ';
 import { CustomerTestimonials } from '@/components/product/CustomerTestimonials';
 import { ProductFeatures } from '@/components/product/ProductFeatures';
 import { Footer } from '@/components/layout/Footer';
