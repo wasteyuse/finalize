@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, FileText, MessageSquare, TruckIcon, RefreshCw, ArrowLeftRight, FileCheck } from 'lucide-react';
+import { X, TruckIcon, RefreshCw, ArrowLeftRight, FileCheck, MessageSquare } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
@@ -82,7 +82,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
           {/* Sidebar */}
           <motion.div
             id="sidebar"
-            className="fixed top-0 left-0 bottom-0 w-[300px] max-w-[80vw] bg-white dark:bg-[#1A1F2C] z-50 shadow-xl flex flex-col"
+            className="fixed top-0 left-0 bottom-0 w-[250px] max-w-[70vw] bg-white dark:bg-[#1A1F2C] z-50 shadow-xl flex flex-col rounded-r-xl"
             initial={{ x: '-100%' }}
             animate={{ x: 0 }}
             exit={{ x: '-100%' }}
@@ -106,11 +106,11 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
                   <li key={index}>
                     <Link 
                       to={item.path} 
-                      className="flex items-center gap-3 px-4 py-3 rounded-md text-gray-700 dark:text-gray-200 hover:bg-[#F3F2FF] dark:hover:bg-gray-800 hover:text-[#7069BC] dark:hover:text-[#9b87f5] transition-colors"
+                      className="flex items-center gap-3 px-4 py-3 rounded-md text-gray-700 dark:text-gray-200 hover:bg-[#F3F2FF] dark:hover:bg-gray-800 hover:text-[#7069BC] dark:hover:text-[#9b87f5] transition-colors group"
                       onClick={onClose}
                     >
                       {item.icon}
-                      <span>{item.title}</span>
+                      <span className="group-hover:ml-2 transition-all duration-200">{item.title}</span>
                     </Link>
                   </li>
                 ))}
