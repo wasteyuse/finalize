@@ -19,7 +19,7 @@ export const Header: React.FC = () => {
           {/* Center Section - Logo */}
           <div className="absolute left-1/2 transform -translate-x-1/2">
             <Link to="/" className="block font-bold text-xl text-[#cc1653]">
-              Bleame
+              REMEMBER FRAME
             </Link>
           </div>
 
