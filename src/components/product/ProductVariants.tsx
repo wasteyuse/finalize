@@ -1,5 +1,4 @@
-
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Check, Package } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useCart } from "@/contexts/CartContext";
@@ -32,6 +31,13 @@ export const ProductVariants: React.FC<ProductVariantsProps> = ({
     variants[0].id,
   );
   const { addToCart } = useCart();
+
+  useEffect(() => {
+    // Initialize PayPal cart if the global cartPaypal object exists
+    if (window.cartPaypal && typeof window.cartPaypal.AddToCart === 'function') {
+      window.cartPaypal.AddToCart({ id: "2YFECDREWTECQ" });
+    }
+  }, []);
 
   const handleVariantSelect = (variant: Variant) => {
     setSelectedVariant(variant.id);
@@ -144,6 +150,10 @@ export const ProductVariants: React.FC<ProductVariantsProps> = ({
       >
         CLAIM OFFER
       </button>
+      
+      <div className="my-4">
+        <paypal-add-to-cart-button data-id="2YFECDREWTECQ"></paypal-add-to-cart-button>
+      </div>
       
       <CountdownTimer initialMinutes={16} initialSeconds={59} />
       
