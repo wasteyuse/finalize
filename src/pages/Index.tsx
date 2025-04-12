@@ -47,12 +47,11 @@ const Index = () => {
           </div>
         </div>
         
-        <CustomerTestimonials rating={4.8} reviewCount={1237} />
-        
         <div className="max-w-3xl mx-auto mt-12">
-          
           <ProductFAQ items={faqItems} />
         </div>
+        
+        <CustomerTestimonials rating={4.8} reviewCount={1237} />
       </div>
       
       <ProductFeatures />
