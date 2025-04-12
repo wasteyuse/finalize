@@ -24,7 +24,7 @@ export const TopBanner: React.FC = () => {
           </defs>
         </svg>
       ),
-      text: "Free Shipping Today"
+      text: "FREE SHIPPING TODAY"
     },
     {
       icon: (
@@ -47,7 +47,7 @@ export const TopBanner: React.FC = () => {
           </defs>
         </svg>
       ),
-      text: "175,000+ Happy Babes"
+      text: "LIMITED TIME: SAVE UP TO 48%"
     }
   ];
 
