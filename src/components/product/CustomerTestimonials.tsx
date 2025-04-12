@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { StarRating } from "@/components/ui/StarRating";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
@@ -57,25 +57,16 @@ export const CustomerTestimonials: React.FC<CustomerTestimonialsProps> = ({
   ];
 
   const [currentReview, setCurrentReview] = useState(0);
-  const scrollSpeed = 3; // Fixed at 3 seconds
 
-  const nextReview = useCallback(() => {
+  const nextReview = () => {
     setCurrentReview(prev => (prev + 1) % reviews.length);
-  }, [reviews.length]);
+  };
 
   const prevReview = () => {
     setCurrentReview(prev => (prev === 0 ? reviews.length - 1 : prev - 1));
   };
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      nextReview();
-    }, scrollSpeed * 1000); // Convert to milliseconds
-    
-    return () => {
-      clearInterval(interval);
-    };
-  }, [nextReview, scrollSpeed]);
+  // Removed the useEffect hook that was controlling auto-scrolling
 
   return (
     <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 my-8">
