@@ -22,7 +22,7 @@ export const ProductGallery: React.FC<ProductGalleryProps> = ({
           </div>)}
         
         {/* Image Navigation Controls */}
-        <div className="absolute inset-0 flex items-center justify-between opacity-0 hover:opacity-100 transition-opacity duration-200 px-[14px]">
+        <div className="absolute inset-0 flex items-center justify-between opacity-0 hover:opacity-100 transition-opacity duration-200 px-[16px]">
           <button className="w-9 h-9 flex items-center justify-center bg-white/80 backdrop-blur-sm rounded-full shadow-md hover:bg-white transition-colors" onClick={() => setCurrentImage(prev => prev > 0 ? prev - 1 : images.length - 1)} aria-label="Previous image">
             <ChevronLeft className="w-5 h-5 text-gray-700" />
           </button>
