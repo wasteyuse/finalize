@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { Check } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useCart } from "@/contexts/CartContext";
 
 interface Variant {
   id: string;
@@ -29,10 +30,26 @@ export const ProductVariants: React.FC<ProductVariantsProps> = ({
   const [selectedVariant, setSelectedVariant] = useState<string>(
     variants[0].id,
   );
+  const { addToCart } = useCart();
 
   const handleVariantSelect = (variant: Variant) => {
     setSelectedVariant(variant.id);
     onVariantSelect(variant);
+  };
+
+  const handleAddToCart = () => {
+    // Find the selected variant
+    const variant = variants.find((v) => v.id === selectedVariant);
+    if (variant) {
+      // Add to cart
+      addToCart({
+        id: variant.id,
+        title: variant.title,
+        image: variant.image,
+        price: variant.price,
+        originalPrice: variant.originalPrice,
+      });
+    }
   };
 
   return (
@@ -113,9 +130,16 @@ export const ProductVariants: React.FC<ProductVariantsProps> = ({
         </div>
       </div>
       
-      <button className="w-full h-[62px] text-white text-lg font-bold tracking-wide uppercase cursor-pointer mt-5 mb-4 rounded-xl border-none bg-gradient-to-r from-[#7069BC] to-[#8A84D8] hover:brightness-105 transition-all duration-300 shadow-md hover:shadow-lg">
+      <button 
+        className="w-full h-[62px] text-white text-lg font-bold tracking-wide uppercase cursor-pointer mt-5 mb-4 rounded-xl border-none bg-gradient-to-r from-[#7069BC] to-[#8A84D8] hover:brightness-105 transition-all duration-300 shadow-md hover:shadow-lg"
+        onClick={handleAddToCart}
+      >
         CLAIM OFFER
       </button>
+      
+      <div className="text-xs text-center text-[#8A8A8A] mb-4">
+        Free shipping on orders over $50
+      </div>
       
       <div className="flex justify-center">
         <img
