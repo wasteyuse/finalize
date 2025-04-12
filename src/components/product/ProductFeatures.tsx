@@ -1,10 +1,9 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 
 export const ProductFeatures: React.FC = () => {
   return (
-    <div className="w-full py-16 px-4 bg-[#F1F0FB]">
+    <div className="w-full py-16 px-4 bg-[#FFF0F5]">
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div className="space-y-6">
@@ -69,4 +68,3 @@ export const ProductFeatures: React.FC = () => {
     </div>
   );
 };
-
