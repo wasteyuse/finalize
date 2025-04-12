@@ -1,3 +1,4 @@
+
 import React from "react";
 
 interface StarRatingProps {
@@ -11,7 +12,7 @@ export const StarRating: React.FC<StarRatingProps> = ({
   rating,
   maxStars = 5,
   size = 18,
-  color = "#7069BC",
+  color = "#cc1653", // Updated from #7069BC
 }) => {
   return (
     <div className="flex gap-0.5">
