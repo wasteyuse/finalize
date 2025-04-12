@@ -1,10 +1,8 @@
-
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { StarRating } from "@/components/ui/StarRating";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Card, CardContent } from "@/components/ui/card";
-
 interface Review {
   id: number;
   name: string;
@@ -14,12 +12,10 @@ interface Review {
   verified: boolean;
   image?: string;
 }
-
 interface CustomerTestimonialsProps {
   rating: number;
   reviewCount: number;
 }
-
 export const CustomerTestimonials: React.FC<CustomerTestimonialsProps> = ({
   rating,
   reviewCount
@@ -50,7 +46,6 @@ export const CustomerTestimonials: React.FC<CustomerTestimonialsProps> = ({
     verified: true,
     image: "https://images.unsplash.com/photo-1535268647677-300dbf3d78d1"
   }];
-
   return <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 my-8">
       <div className="text-center mb-6">
         <h2 className="text-2xl font-bold text-gray-800 mb-2">Customer Testimonials</h2>
@@ -65,48 +60,34 @@ export const CustomerTestimonials: React.FC<CustomerTestimonialsProps> = ({
       
       {/* Individual Reviews */}
       <div className="space-y-6 mb-8">
-        {reviews.map(review => (
-          <Card key={review.id} className="overflow-hidden border-gray-100">
+        {reviews.map(review => <Card key={review.id} className="overflow-hidden border-gray-100">
             <CardContent className="p-4">
               <div className="flex justify-between items-start mb-4">
                 <div className="flex items-center">
                   <Avatar className="h-10 w-10 mr-3 bg-[#7069BC]">
-                    {review.image ? (
-                      <AvatarImage src={review.image} alt={review.name} />
-                    ) : (
-                      <AvatarFallback>{review.name.charAt(0)}</AvatarFallback>
-                    )}
+                    {review.image ? <AvatarImage src={review.image} alt={review.name} /> : <AvatarFallback>{review.name.charAt(0)}</AvatarFallback>}
                   </Avatar>
                   <div>
                     <p className="font-medium">{review.name}</p>
                     <div className="flex items-center gap-2">
                       <StarRating rating={review.rating} size={14} />
-                      <span className="text-xs text-gray-500">{review.date}</span>
+                      
                     </div>
                   </div>
                 </div>
-                {review.verified && (
-                  <div className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">
+                {review.verified && <div className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">
                     Verified Purchase
-                  </div>
-                )}
+                  </div>}
               </div>
               
               <p className="text-gray-700 text-sm mb-4">{review.comment}</p>
               
               {/* Review image preview */}
-              {review.image && (
-                <div className="mt-3">
-                  <img 
-                    src={review.image} 
-                    alt="Product result" 
-                    className="rounded-lg w-full max-h-48 object-cover"
-                  />
-                </div>
-              )}
+              {review.image && <div className="mt-3">
+                  <img src={review.image} alt="Product result" className="rounded-lg w-full max-h-48 object-cover" />
+                </div>}
             </CardContent>
-          </Card>
-        ))}
+          </Card>)}
       </div>
       
       <div className="mt-8 flex flex-col items-center">
