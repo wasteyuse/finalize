@@ -103,13 +103,13 @@ export const ProductVariants: React.FC<ProductVariantsProps> = ({
         </div>
       ))}
       
-      <div className="flex items-center bg-gradient-to-r from-[#7069BC] to-[#8A84D8] p-3 rounded-b-xl max-sm:flex-col max-sm:text-center">
-        <div className="bg-white/20 p-1.5 rounded-lg mr-3 max-sm:mx-0 max-sm:mb-2">
-          <img src={bonusImage} alt="Body Scrub" className="w-[50px] h-11" />
+      <div className="flex items-center bg-gradient-to-r from-[#7069BC] to-[#8A84D8] p-2.5 rounded-md shadow-sm mt-2 max-sm:flex-col max-sm:text-center overflow-hidden">
+        <div className="bg-white/15 rounded-lg p-1 mr-3 flex-shrink-0 max-sm:mx-auto max-sm:mb-1.5">
+          <img src={bonusImage} alt="Free Bonus" className="w-11 h-9 object-contain" />
         </div>
         <div className="text-white text-sm max-sm:mx-0 max-sm:my-1">
           <span className="font-bold mr-1">+ FREE</span>
-          <span>Body scrub for silky & shiny skin</span>
+          <span className="opacity-90">Body scrub for silky & shiny skin</span>
         </div>
       </div>
       
