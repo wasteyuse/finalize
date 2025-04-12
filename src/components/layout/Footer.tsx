@@ -83,20 +83,7 @@ export const Footer = () => {
           </div>
           
           {/* Contact Info */}
-          <div className="col-span-1">
-            <h2 className="text-xl font-bold mb-4">Contact Info</h2>
-            <ul className="space-y-4">
-              <li className="flex items-start">
-                <Mail className="w-5 h-5 mr-3 text-[#7069BC] flex-shrink-0 mt-1" />
-                <span className="text-gray-300">support@bleame.com</span>
-              </li>
-              
-              <li className="flex items-start">
-                <MapPin className="w-5 h-5 mr-3 text-[#7069BC] flex-shrink-0 mt-1" />
-                <span className="text-gray-300">123 Commerce St, Suite 100<br />New York, NY 10001</span>
-              </li>
-            </ul>
-          </div>
+          
         </div>
         
         <Separator className="my-8 bg-gray-700" />
