@@ -47,7 +47,7 @@ export const CustomerTestimonials: React.FC<CustomerTestimonialsProps> = ({
   }];
   return <div className="bg-white rounded-xl shadow-sm p-6 my-8 px-0">
       <div className="text-center mb-6">
-        <h2 className="text-2xl font-bold text-gray-800 mb-2">Look At How Others Are Loving Their Bleame</h2>
+        <h2 className="text-2xl font-bold text-gray-800 mb-2">Look At How Others Are Loving Their Frame</h2>
         <div className="flex items-center justify-center mb-1 gap-1">
           <StarRating rating={rating} size={20} />
           <span className="text-sm font-medium text-gray-700 ml-2">
