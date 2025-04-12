@@ -10,7 +10,7 @@ export const SidebarTrigger: React.FC<SidebarTriggerProps> = ({
   onClick,
   className
 }) => {
-  return <Button id="sidebar-trigger" variant="ghost" size="icon" onClick={onClick} aria-label="Open navigation menu" className="text-base">
+  return <Button id="sidebar-trigger" variant="ghost" size="icon" onClick={onClick} aria-label="Open navigation menu" className="text-lg">
       <Menu className="w-6 h-6" />
     </Button>;
 };
