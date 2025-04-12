@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { useCart } from "@/contexts/CartContext";
 import { CountdownTimer } from "./CountdownTimer";
@@ -28,7 +29,7 @@ export const ProductVariants: React.FC<ProductVariantsProps> = ({
     {
       id: "1pack",
       title: "1 Pack",
-      image: product.image,
+      image: "/lovable-uploads/4874238e-a2a5-4740-85d4-6a42ea1bff52.png",
       price: 89,
       originalPrice: 129,
       saveAmount: 40,
@@ -37,7 +38,7 @@ export const ProductVariants: React.FC<ProductVariantsProps> = ({
     {
       id: "2pack",
       title: "2 Pack",
-      image: product.image,
+      image: "/lovable-uploads/4874238e-a2a5-4740-85d4-6a42ea1bff52.png",
       price: 149,
       originalPrice: 219,
       saveAmount: 70,
@@ -157,3 +158,4 @@ export const ProductVariants: React.FC<ProductVariantsProps> = ({
     </div>
   );
 };
+
