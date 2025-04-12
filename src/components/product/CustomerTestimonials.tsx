@@ -1,9 +1,7 @@
-
 import React from "react";
 import { StarRating } from "@/components/ui/StarRating";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Card, CardContent } from "@/components/ui/card";
-
 interface Review {
   id: number;
   name: string;
@@ -13,49 +11,41 @@ interface Review {
   verified: boolean;
   image?: string;
 }
-
 interface CustomerTestimonialsProps {
   rating: number;
   reviewCount: number;
 }
-
 export const CustomerTestimonials: React.FC<CustomerTestimonialsProps> = ({
   rating,
   reviewCount
 }) => {
   // Sample customer reviews data with added images
-  const reviews: Review[] = [
-    {
-      id: 1,
-      name: "Jessica M.",
-      rating: 5,
-      date: "March 15, 2023",
-      comment: "I was skeptical at first, but this product is amazing! My skin feels so smooth after using it. No more razor bumps or cuts. Definitely worth the money.",
-      verified: true,
-      image: "https://images.unsplash.com/photo-1582562124811-c09040d0a901"
-    },
-    {
-      id: 2,
-      name: "Sarah T.",
-      rating: 5,
-      date: "February 22, 2023",
-      comment: "Game changer for sensitive skin! I've tried everything for my sensitive skin and this is the only product that doesn't cause irritation. Love it!",
-      verified: true,
-      image: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9"
-    },
-    {
-      id: 3,
-      name: "Melissa K.",
-      rating: 4,
-      date: "April 3, 2023",
-      comment: "Works great on legs and underarms. Takes a little practice to get the technique right, but once you do, it's so easy to use.",
-      verified: true,
-      image: "https://images.unsplash.com/photo-1535268647677-300dbf3d78d1"
-    }
-  ];
-
-  return (
-    <div className="bg-white rounded-xl shadow-sm p-6 my-8">
+  const reviews: Review[] = [{
+    id: 1,
+    name: "Jessica M.",
+    rating: 5,
+    date: "March 15, 2023",
+    comment: "I was skeptical at first, but this product is amazing! My skin feels so smooth after using it. No more razor bumps or cuts. Definitely worth the money.",
+    verified: true,
+    image: "https://images.unsplash.com/photo-1582562124811-c09040d0a901"
+  }, {
+    id: 2,
+    name: "Sarah T.",
+    rating: 5,
+    date: "February 22, 2023",
+    comment: "Game changer for sensitive skin! I've tried everything for my sensitive skin and this is the only product that doesn't cause irritation. Love it!",
+    verified: true,
+    image: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9"
+  }, {
+    id: 3,
+    name: "Melissa K.",
+    rating: 4,
+    date: "April 3, 2023",
+    comment: "Works great on legs and underarms. Takes a little practice to get the technique right, but once you do, it's so easy to use.",
+    verified: true,
+    image: "https://images.unsplash.com/photo-1535268647677-300dbf3d78d1"
+  }];
+  return <div className="bg-white rounded-xl shadow-sm p-6 my-8 px-0">
       <div className="text-center mb-6">
         <h2 className="text-2xl font-bold text-gray-800 mb-2">Look At How Others Are Loving Their Bleame</h2>
         <div className="flex items-center justify-center mb-1 gap-1">
@@ -69,8 +59,7 @@ export const CustomerTestimonials: React.FC<CustomerTestimonialsProps> = ({
       
       {/* Vertical Reviews Display */}
       <div className="space-y-4">
-        {reviews.map((review) => (
-          <Card key={review.id} className="border-gray-100">
+        {reviews.map(review => <Card key={review.id} className="border-gray-100">
             <CardContent className="p-4">
               <div className="flex justify-between items-start mb-4">
                 <div className="flex items-center">
@@ -84,24 +73,19 @@ export const CustomerTestimonials: React.FC<CustomerTestimonialsProps> = ({
                     </div>
                   </div>
                 </div>
-                {review.verified && (
-                  <div className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">
+                {review.verified && <div className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">
                     Verified Purchase
-                  </div>
-                )}
+                  </div>}
               </div>
               
               <p className="text-gray-700 text-sm mb-4">{review.comment}</p>
               
               {/* Review image preview */}
-              {review.image && (
-                <div className="mt-3">
+              {review.image && <div className="mt-3">
                   <img src={review.image} alt="Product result" className="rounded-lg w-full max-h-48 object-cover" />
-                </div>
-              )}
+                </div>}
             </CardContent>
-          </Card>
-        ))}
+          </Card>)}
       </div>
       
       <div className="mt-8 flex flex-col items-center">
@@ -114,6 +98,5 @@ export const CustomerTestimonials: React.FC<CustomerTestimonialsProps> = ({
           30-day money-back guarantee
         </p>
       </div>
-    </div>
-  );
+    </div>;
 };
