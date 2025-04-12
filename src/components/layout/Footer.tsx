@@ -1,36 +1,24 @@
-
 import React from "react";
 import { Separator } from "../ui/separator";
 import { Link } from "react-router-dom";
 import { Facebook, Instagram, Twitter } from "lucide-react";
-
 export const Footer = () => {
-  return (
-    <footer className="bg-black text-white py-16">
+  return <footer className="bg-black text-white py-16">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="space-y-4">
-            <h3 className="text-xl font-bold">Unleash Golf</h3>
+            <h3 className="text-xl font-bold">Remember Frame</h3>
             <p className="text-gray-300">
               Elevating your golf game with premium equipment and accessories.
             </p>
             <div className="flex space-x-4">
-              <a
-                href="#"
-                className="text-gray-300 hover:text-white transition-colors"
-              >
+              <a href="#" className="text-gray-300 hover:text-white transition-colors">
                 <Facebook size={20} />
               </a>
-              <a
-                href="#"
-                className="text-gray-300 hover:text-white transition-colors"
-              >
+              <a href="#" className="text-gray-300 hover:text-white transition-colors">
                 <Instagram size={20} />
               </a>
-              <a
-                href="#"
-                className="text-gray-300 hover:text-white transition-colors"
-              >
+              <a href="#" className="text-gray-300 hover:text-white transition-colors">
                 <Twitter size={20} />
               </a>
             </div>
@@ -66,18 +54,12 @@ export const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link
-                  to="/shipping-policy"
-                  className="text-gray-300 hover:text-white"
-                >
+                <Link to="/shipping-policy" className="text-gray-300 hover:text-white">
                   Shipping Policy
                 </Link>
               </li>
               <li>
-                <Link
-                  to="/return-exchange"
-                  className="text-gray-300 hover:text-white"
-                >
+                <Link to="/return-exchange" className="text-gray-300 hover:text-white">
                   Returns & Exchanges
                 </Link>
               </li>
@@ -93,18 +75,12 @@ export const Footer = () => {
                 </a>
               </li>
               <li>
-                <Link
-                  to="/terms-of-use"
-                  className="text-gray-300 hover:text-white"
-                >
+                <Link to="/terms-of-use" className="text-gray-300 hover:text-white">
                   Terms of Use
                 </Link>
               </li>
               <li>
-                <Link
-                  to="/refund-policy"
-                  className="text-gray-300 hover:text-white"
-                >
+                <Link to="/refund-policy" className="text-gray-300 hover:text-white">
                   Refund Policy
                 </Link>
               </li>
@@ -129,8 +105,6 @@ export const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
