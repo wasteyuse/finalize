@@ -63,7 +63,7 @@ export const Footer = () => {
       href: "/contact"
     }]
   };
-  return <footer className="bg-gradient-to-b from-[#1A1F2C] to-[#121620] text-white py-16">
+  return <footer className="bg-gradient-to-b from-[#1A1F2C] to-[#121620] text-white py-16 bg-gray-950">
       <div className="container mx-auto px-4 bg-gray-950">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Newsletter Section */}
