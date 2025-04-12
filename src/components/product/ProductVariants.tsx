@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { Check } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -124,7 +125,7 @@ export const ProductVariants: React.FC<ProductVariantsProps> = ({
         <div className="bg-white/15 rounded-lg p-1 mr-2 flex-shrink-0 max-sm:mx-auto max-sm:mb-1.5">
           <img src={bonusImage} alt="Free Bonus" className="w-8 h-7 object-contain" />
         </div>
-        <div className="text-white text-xs max-sm:mx-0 max-sm:my-1">
+        <div className="text-white text-xs max-sm:mx-0 max-sm:my-1 flex items-center">
           <span className="font-bold mr-1">+ FREE</span>
           <span className="opacity-90">Body scrub</span>
         </div>
