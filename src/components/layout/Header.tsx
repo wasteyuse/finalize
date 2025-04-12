@@ -2,7 +2,6 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Home, Search, User } from 'lucide-react';
-import { CartIndicator } from '@/components/cart/CartIndicator';
 import { cn } from '@/lib/utils';
 
 export const Header: React.FC = () => {
@@ -39,7 +38,6 @@ export const Header: React.FC = () => {
             <div className="mr-2">
               <paypal-cart-button data-id="pp-view-cart"></paypal-cart-button>
             </div>
-            <CartIndicator />
           </div>
         </div>
       </div>
