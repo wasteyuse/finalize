@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+
+import React from 'react';
 import { TopBanner } from '@/components/product/TopBanner';
 import { ProductGallery } from '@/components/product/ProductGallery';
 import { ProductInfo } from '@/components/product/ProductInfo';
@@ -20,25 +21,13 @@ const Index = () => {
     "😌 Gently exfoliates dead skin cell"
   ];
 
-  const variants = [
-    {
-      id: "1pack",
-      title: "1 Pack",
-      image: "https://cdn.builder.io/api/v1/image/assets/TEMP/b6644ee7da92f25de0ae4058653690db479a8d98",
-      price: 29,
-      originalPrice: 47,
-      savings: 18
-    },
-    {
-      id: "2pack",
-      title: "2 Pack",
-      image: "https://cdn.builder.io/api/v1/image/assets/TEMP/58590e72c6a1dad437688ff5c999b007201c810c",
-      price: 49,
-      originalPrice: 94,
-      savings: 45,
-      features: ["Includes", "FREE", "shipping"]
-    }
-  ];
+  const product = {
+    id: "1pack",
+    title: "Bleame Crystal Hair Eraser",
+    image: "https://cdn.builder.io/api/v1/image/assets/TEMP/b6644ee7da92f25de0ae4058653690db479a8d98",
+    price: 29,
+    originalPrice: 47
+  };
 
   const faqItems = [
     {
@@ -58,10 +47,6 @@ const Index = () => {
       answer: "Each Bleame crystal can last for months with proper care and regular use."
     }
   ];
-  
-  const handleVariantSelect = (variant: any) => {
-    console.log("Selected variant:", variant);
-  };
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -83,10 +68,9 @@ const Index = () => {
               features={features}
             />
             <ProductVariants 
-              variants={variants}
+              product={product}
               bonusImage="https://cdn.builder.io/api/v1/image/assets/TEMP/b6644ee7da92f25de0ae4058653690db479a8d98"
               paymentMethodsImage="/lovable-uploads/bf3df539-4f44-4259-b843-84a24c3df34a.png"
-              onVariantSelect={handleVariantSelect}
             />
           </div>
         </div>
