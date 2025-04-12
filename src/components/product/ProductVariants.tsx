@@ -2,6 +2,7 @@ import React from "react";
 import { useCart } from "@/contexts/CartContext";
 import { CountdownTimer } from "./CountdownTimer";
 import { Button } from "@/components/ui/button";
+
 interface ProductVariantsProps {
   product: {
     id: string;
@@ -13,14 +14,14 @@ interface ProductVariantsProps {
   bonusImage: string;
   paymentMethodsImage: string;
 }
+
 export const ProductVariants: React.FC<ProductVariantsProps> = ({
   product,
   bonusImage,
   paymentMethodsImage
 }) => {
-  const {
-    addToCart
-  } = useCart();
+  const { addToCart } = useCart();
+  
   const handleAddToCart = () => {
     // Add to cart
     addToCart({
@@ -31,7 +32,9 @@ export const ProductVariants: React.FC<ProductVariantsProps> = ({
       originalPrice: product.originalPrice
     });
   };
-  return <div className="mb-6">
+
+  return (
+    <div className="mb-6">
       <div className="flex items-center border relative mb-3 p-5 rounded-xl border-[#7069BC] bg-[#F9F8FF] shadow-sm py-[14px]">
         <img src={product.image} alt={product.title} className="w-[50px] h-[50px] rounded-lg object-contain mx-3" />
         
@@ -64,7 +67,19 @@ export const ProductVariants: React.FC<ProductVariantsProps> = ({
       </div>
       
       <div className="my-4">
-        <Button onClick={handleAddToCart} className="w-full bg-[#7069BC] hover:bg-[#5d58a3] text-white px-4 rounded text-xl py-[22px] font-bold">CLAIM OFFER</Button>
+        <a 
+          href="https://www.paypal.com/ncp/payment/AWQDP2YASKJAY" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="block"
+        >
+          <Button 
+            onClick={handleAddToCart} 
+            className="w-full bg-[#7069BC] hover:bg-[#5d58a3] text-white px-4 rounded text-xl py-[22px] font-bold"
+          >
+            CLAIM OFFER
+          </Button>
+        </a>
       </div>
       
       <CountdownTimer initialMinutes={16} initialSeconds={59} />
@@ -76,5 +91,6 @@ export const ProductVariants: React.FC<ProductVariantsProps> = ({
       <div className="flex justify-center">
         <img src="/lovable-uploads/bf3df539-4f44-4259-b843-84a24c3df34a.png" alt="Payment methods" className="h-[26px] object-contain mx-auto opacity-90 hover:opacity-100 transition-opacity" />
       </div>
-    </div>;
+    </div>
+  );
 };
