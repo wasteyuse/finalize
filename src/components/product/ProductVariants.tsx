@@ -1,10 +1,9 @@
-
 import React, { useState } from "react";
 import { useCart } from "@/contexts/CartContext";
 import { CountdownTimer } from "./CountdownTimer";
 import { Button } from "@/components/ui/button";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Check, Circle } from "lucide-react";
+import { Circle } from "lucide-react";
 
 interface ProductVariantsProps {
   product: {
@@ -20,7 +19,6 @@ interface ProductVariantsProps {
 
 export const ProductVariants: React.FC<ProductVariantsProps> = ({
   product,
-  bonusImage,
   paymentMethodsImage
 }) => {
   const [selectedVariant, setSelectedVariant] = useState("1pack");
@@ -50,7 +48,6 @@ export const ProductVariants: React.FC<ProductVariantsProps> = ({
   const selectedProduct = variants.find(v => v.id === selectedVariant) || variants[0];
   
   const handleAddToCart = () => {
-    // Add to cart
     addToCart({
       id: selectedProduct.id,
       title: selectedProduct.title,
@@ -131,16 +128,6 @@ export const ProductVariants: React.FC<ProductVariantsProps> = ({
           </div>
         ))}
       </RadioGroup>
-      
-      <div className="flex items-center bg-gradient-to-r from-[#7069BC] to-[#8A84D8] p-1.5 rounded-md shadow-sm mt-2 max-sm:flex-col max-sm:text-center overflow-hidden py-[5px]">
-        <div className="bg-white/15 rounded-lg p-1 mr-2 flex-shrink-0 max-sm:mx-auto max-sm:mb-1.5">
-          <img src={bonusImage} alt="Free Bonus" className="w-8 h-7 object-contain" />
-        </div>
-        <div className="text-white text-xs max-sm:mx-0 max-sm:my-1 flex items-center">
-          <span className="font-bold mr-1">+ FREE SHIPPING</span>
-          <span className="opacity-90">Body scrub</span>
-        </div>
-      </div>
       
       <div className="my-4">
         <a 
