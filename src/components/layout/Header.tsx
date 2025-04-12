@@ -1,13 +1,10 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Home, Search, User } from 'lucide-react';
 import { CartIndicator } from '@/components/cart/CartIndicator';
 import { cn } from '@/lib/utils';
-
 export const Header: React.FC = () => {
-  return (
-    <header className="sticky top-0 z-50 w-full bg-white border-b border-gray-100 shadow-sm">
+  return <header className="sticky top-0 z-50 w-full bg-white border-b border-gray-100 shadow-sm">
       <div className="container max-w-6xl px-4 mx-auto">
         <div className="flex items-center justify-between h-16">
           {/* Left Section - Navigation Icons */}
@@ -15,9 +12,7 @@ export const Header: React.FC = () => {
             <Link to="/" className="p-2 rounded-full hover:bg-gray-100 transition-colors" aria-label="Home">
               <Home className="w-5 h-5" />
             </Link>
-            <button className="p-2 rounded-full hover:bg-gray-100 transition-colors" aria-label="Search">
-              <Search className="w-5 h-5" />
-            </button>
+            
             <button className="p-2 rounded-full hover:bg-gray-100 transition-colors" aria-label="Profile">
               <User className="w-5 h-5" />
             </button>
@@ -36,6 +31,5 @@ export const Header: React.FC = () => {
           </div>
         </div>
       </div>
-    </header>
-  );
+    </header>;
 };
