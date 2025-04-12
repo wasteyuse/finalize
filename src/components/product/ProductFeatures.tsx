@@ -59,8 +59,8 @@ export const ProductFeatures: React.FC = () => {
           </div>
           <div className="flex justify-center">
             <img 
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/fe3e9f21-34b9-41a0-909d-af2639c4e74f"
-              alt="Bleame Crystal Hair Eraser in use" 
+              src="/lovable-uploads/63c0f7c1-724f-4a38-948e-c6a49299c025.png"
+              alt="Premium Structure for Better Protection" 
               className="max-w-full h-auto rounded-lg shadow-lg"
             />
           </div>
@@ -69,3 +69,4 @@ export const ProductFeatures: React.FC = () => {
     </div>
   );
 };
+
