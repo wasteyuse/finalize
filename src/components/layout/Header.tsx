@@ -1,7 +1,7 @@
 
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Home, Search, User } from 'lucide-react';
+import { Menu, User } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 export const Header: React.FC = () => {
@@ -17,9 +17,9 @@ export const Header: React.FC = () => {
         <div className="flex items-center justify-between h-16">
           {/* Left Section - Navigation Icons */}
           <div className="flex items-center space-x-4">
-            <Link to="/" className="p-2 rounded-full hover:bg-gray-100 transition-colors" aria-label="Home">
-              <Home className="w-5 h-5" />
-            </Link>
+            <button className="p-2 rounded-full hover:bg-gray-100 transition-colors" aria-label="Menu">
+              <Menu className="w-5 h-5" />
+            </button>
             
             <button className="p-2 rounded-full hover:bg-gray-100 transition-colors" aria-label="Profile">
               <User className="w-5 h-5" />
