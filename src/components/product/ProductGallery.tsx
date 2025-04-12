@@ -40,7 +40,7 @@ export const ProductGallery: React.FC<ProductGalleryProps> = ({
       {/* Thumbnail Carousel */}
       <Carousel className="w-full max-w-[342px] mx-auto">
         <CarouselContent className="gap-2 px-[24px] py-[5px]">
-          {thumbnails.map((thumbnail, index) => <CarouselItem key={index} className="basis-1/4 pl-1">
+          {thumbnails.map((thumbnail, index) => <CarouselItem key={index} className="basis-1/4 pl-1 px-0">
               <button className={`relative w-full aspect-square rounded-lg overflow-hidden transition-all duration-300 ${index === currentImage ? "ring-2 ring-[#7069BC] scale-105" : "opacity-70 hover:opacity-100"}`} onClick={() => handleThumbnailClick(index)}>
                 <img src={thumbnail} alt={`Thumbnail ${index + 1}`} className="w-full h-full object-cover" />
                 {index === currentImage && <div className="absolute inset-0 bg-[#7069BC]/10" />}
