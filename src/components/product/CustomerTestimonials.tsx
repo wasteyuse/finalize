@@ -92,7 +92,7 @@ export const CustomerTestimonials: React.FC<CustomerTestimonialsProps> = ({
       
       <div className="mt-8 flex flex-col items-center">
         <a href="https://www.paypal.com/ncp/payment/AWQDP2YASKJAY" target="_blank" rel="noopener noreferrer" className="w-full max-w-xs">
-          <button className="bg-[#7069BC] hover:bg-[#8A84D8] text-white font-bold rounded-md uppercase tracking-wide shadow-md hover:shadow-lg transition-all w-full max-w-xs text-xl text-center px-[19px] py-[10px]">
+          <button className="bg-[#7069BC] hover:bg-[#8A84D8] text-white font-bold rounded-md uppercase tracking-wide shadow-md hover:shadow-lg transition-all w-full max-w-xs text-xl text-center px-[19px] py-[5px]">
             CLAIM OFFER
           </button>
         </a>
