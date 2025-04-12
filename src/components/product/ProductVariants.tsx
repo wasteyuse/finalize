@@ -1,8 +1,6 @@
-
 import React, { useEffect } from "react";
 import { useCart } from "@/contexts/CartContext";
 import { CountdownTimer } from "./CountdownTimer";
-
 interface ProductVariantsProps {
   product: {
     id: string;
@@ -14,21 +12,22 @@ interface ProductVariantsProps {
   bonusImage: string;
   paymentMethodsImage: string;
 }
-
 export const ProductVariants: React.FC<ProductVariantsProps> = ({
   product,
   bonusImage,
-  paymentMethodsImage,
+  paymentMethodsImage
 }) => {
-  const { addToCart } = useCart();
-
+  const {
+    addToCart
+  } = useCart();
   useEffect(() => {
     // Initialize PayPal cart if the global cartPaypal object exists
     if (window.cartPaypal && typeof window.cartPaypal.AddToCart === 'function') {
-      window.cartPaypal.AddToCart({ id: "2YFECDREWTECQ" });
+      window.cartPaypal.AddToCart({
+        id: "2YFECDREWTECQ"
+      });
     }
   }, []);
-
   const handleAddToCart = () => {
     // Add to cart
     addToCart({
@@ -36,18 +35,12 @@ export const ProductVariants: React.FC<ProductVariantsProps> = ({
       title: product.title,
       image: product.image,
       price: product.price,
-      originalPrice: product.originalPrice,
+      originalPrice: product.originalPrice
     });
   };
-
-  return (
-    <div className="mb-6">
+  return <div className="mb-6">
       <div className="flex items-center border relative mb-3 p-5 rounded-xl border-[#7069BC] bg-[#F9F8FF] shadow-sm">
-        <img
-          src={product.image}
-          alt={product.title}
-          className="w-[50px] h-[50px] rounded-lg object-contain mx-3"
-        />
+        <img src={product.image} alt={product.title} className="w-[50px] h-[50px] rounded-lg object-contain mx-3" />
         
         <div className="flex-1">
           <div className="flex items-center flex-wrap gap-2">
@@ -77,12 +70,7 @@ export const ProductVariants: React.FC<ProductVariantsProps> = ({
         </div>
       </div>
       
-      <button 
-        className="w-full h-[62px] text-white text-lg font-bold tracking-wide uppercase cursor-pointer mt-5 mb-4 rounded-xl border-none bg-gradient-to-r from-[#7069BC] to-[#8A84D8] hover:brightness-105 transition-all duration-300 shadow-md hover:shadow-lg"
-        onClick={handleAddToCart}
-      >
-        CLAIM OFFER
-      </button>
+      
       
       <div className="my-4">
         <paypal-add-to-cart-button data-id="2YFECDREWTECQ"></paypal-add-to-cart-button>
@@ -95,12 +83,7 @@ export const ProductVariants: React.FC<ProductVariantsProps> = ({
       </div>
       
       <div className="flex justify-center">
-        <img
-          src="/lovable-uploads/bf3df539-4f44-4259-b843-84a24c3df34a.png"
-          alt="Payment methods"
-          className="h-[26px] object-contain mx-auto opacity-90 hover:opacity-100 transition-opacity"
-        />
+        <img src="/lovable-uploads/bf3df539-4f44-4259-b843-84a24c3df34a.png" alt="Payment methods" className="h-[26px] object-contain mx-auto opacity-90 hover:opacity-100 transition-opacity" />
       </div>
-    </div>
-  );
+    </div>;
 };
