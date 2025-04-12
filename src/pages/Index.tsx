@@ -84,7 +84,7 @@ const Index = () => {
             <ProductVariants 
               variants={variants}
               bonusImage="https://cdn.builder.io/api/v1/image/assets/TEMP/b6644ee7da92f25de0ae4058653690db479a8d98"
-              paymentMethodsImage="https://cdn.builder.io/api/v1/image/assets/TEMP/d2d27a8d41ca782dec8067829f703b253ae3c1f6"
+              paymentMethodsImage="/lovable-uploads/bf3df539-4f44-4259-b843-84a24c3df34a.png"
               onVariantSelect={handleVariantSelect}
             />
           </div>

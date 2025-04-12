@@ -119,7 +119,7 @@ export const ProductVariants: React.FC<ProductVariantsProps> = ({
       
       <div className="flex justify-center">
         <img
-          src={paymentMethodsImage}
+          src="/lovable-uploads/bf3df539-4f44-4259-b843-84a24c3df34a.png"
           alt="Payment methods"
           className="h-[26px] object-contain mx-auto opacity-90 hover:opacity-100 transition-opacity"
         />
