@@ -1,4 +1,13 @@
+
 import React, { useState } from "react";
+import { ChevronLeft, ChevronRight, ZoomIn } from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 interface ProductGalleryProps {
   images: string[];
@@ -10,58 +19,102 @@ export const ProductGallery: React.FC<ProductGalleryProps> = ({
   thumbnails,
 }) => {
   const [currentImage, setCurrentImage] = useState(0);
+  const [isZoomed, setIsZoomed] = useState(false);
+
+  const handleThumbnailClick = (index: number) => {
+    setCurrentImage(index);
+  };
 
   return (
-    <div className="mb-5">
-      <div className="relative w-[342px] h-[329px] overflow-hidden rounded-[10px] max-sm:w-full">
+    <div className="mb-8">
+      {/* Main Image Display */}
+      <div className="relative w-full h-[329px] mb-4 overflow-hidden rounded-xl shadow-md">
         {images.map((image, index) => (
           <div
             key={index}
-            className={`w-[329px] h-[329px] max-sm:w-full ${
-              index === currentImage ? "block" : "hidden"
+            className={`absolute inset-0 w-full h-full transition-opacity duration-500 ease-in-out ${
+              index === currentImage ? "opacity-100" : "opacity-0"
             }`}
           >
             <img
               src={image}
               alt={`Product view ${index + 1}`}
-              className="w-full h-full object-cover rounded-[10px]"
+              className={`w-full h-full object-cover rounded-xl ${
+                isZoomed ? "scale-125 cursor-zoom-out" : "cursor-zoom-in"
+              } transition-transform duration-300`}
+              onClick={() => setIsZoomed(!isZoomed)}
             />
           </div>
         ))}
-        <button
-          className="absolute w-9 h-9 border flex items-center justify-center bg-white rounded-[100px] border-solid border-[#E0DFE1] right-4 bottom-4"
-          aria-label="Zoom image"
-        >
-          <svg
-            width="14"
-            height="15"
-            viewBox="0 0 14 15"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
+        
+        {/* Image Navigation Controls */}
+        <div className="absolute inset-0 flex items-center justify-between px-3 opacity-0 hover:opacity-100 transition-opacity duration-200">
+          <button 
+            className="w-9 h-9 flex items-center justify-center bg-white/80 backdrop-blur-sm rounded-full shadow-md hover:bg-white transition-colors"
+            onClick={() => setCurrentImage((prev) => (prev > 0 ? prev - 1 : images.length - 1))}
+            aria-label="Previous image"
           >
-            <path
-              d="M9.50184 10.4818C11.4777 8.50596 11.5133 5.33801 9.58134 3.40603C7.64936 1.47405 4.48141 1.50964 2.50552 3.48553C0.529631 5.46142 0.494036 8.62937 2.42602 10.5613C4.358 12.4933 7.52595 12.4577 9.50184 10.4818ZM9.50184 10.4818L13 13.98"
-              stroke="#2E2A39"
-              strokeWidth="2"
-            />
-          </svg>
+            <ChevronLeft className="w-5 h-5 text-gray-700" />
+          </button>
+          <button 
+            className="w-9 h-9 flex items-center justify-center bg-white/80 backdrop-blur-sm rounded-full shadow-md hover:bg-white transition-colors"
+            onClick={() => setCurrentImage((prev) => (prev < images.length - 1 ? prev + 1 : 0))}
+            aria-label="Next image"
+          >
+            <ChevronRight className="w-5 h-5 text-gray-700" />
+          </button>
+        </div>
+        
+        {/* Zoom button */}
+        <button
+          className="absolute w-9 h-9 flex items-center justify-center bg-white/80 backdrop-blur-sm rounded-full shadow-md hover:bg-white transition-colors right-3 bottom-3"
+          aria-label="Zoom image"
+          onClick={() => setIsZoomed(!isZoomed)}
+        >
+          <ZoomIn className="w-4 h-4 text-gray-700" />
         </button>
       </div>
-      <div className="flex gap-2.5 overflow-x-auto mt-[18px] max-sm:justify-center">
-        {thumbnails.map((thumbnail, index) => (
+
+      {/* Thumbnail Carousel */}
+      <Carousel className="w-full max-w-[342px] mx-auto">
+        <CarouselContent className="gap-2">
+          {thumbnails.map((thumbnail, index) => (
+            <CarouselItem key={index} className="basis-1/4 pl-1">
+              <button
+                className={`relative w-full aspect-square rounded-lg overflow-hidden transition-all duration-300 ${
+                  index === currentImage 
+                    ? "ring-2 ring-[#7069BC] scale-105" 
+                    : "opacity-70 hover:opacity-100"
+                }`}
+                onClick={() => handleThumbnailClick(index)}
+              >
+                <img
+                  src={thumbnail}
+                  alt={`Thumbnail ${index + 1}`}
+                  className="w-full h-full object-cover"
+                />
+                {index === currentImage && (
+                  <div className="absolute inset-0 bg-[#7069BC]/10" />
+                )}
+              </button>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious className="left-0 bg-white/80 backdrop-blur-sm hover:bg-white" />
+        <CarouselNext className="right-0 bg-white/80 backdrop-blur-sm hover:bg-white" />
+      </Carousel>
+      
+      {/* Image Indicator Dots */}
+      <div className="flex justify-center gap-1.5 mt-4">
+        {images.map((_, index) => (
           <button
             key={index}
-            className={`w-[82px] h-[82px] rounded overflow-hidden ${
-              index === currentImage ? "ring-2 ring-[#7069BC]" : ""
+            className={`w-2 h-2 rounded-full transition-all duration-300 ${
+              index === currentImage ? "bg-[#7069BC] w-4" : "bg-gray-300 hover:bg-gray-400"
             }`}
             onClick={() => setCurrentImage(index)}
-          >
-            <img
-              src={thumbnail}
-              alt={`Thumbnail ${index + 1}`}
-              className="w-full h-full object-cover"
-            />
-          </button>
+            aria-label={`Go to image ${index + 1}`}
+          />
         ))}
       </div>
     </div>
