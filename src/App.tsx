@@ -11,6 +11,7 @@ import NotFound from "./pages/NotFound";
 import { CartProvider } from "./contexts/CartContext";
 import { Cart as CartSlide } from "./components/cart/Cart";
 import { Header } from "./components/layout/Header";
+import { TopBanner } from "@/components/product/TopBanner";
 
 const queryClient = new QueryClient();
 
@@ -22,6 +23,7 @@ const App = () => (
           <Toaster />
           <Sonner />
           <CartSlide />
+          <TopBanner />
           <Header />
           <Routes>
             <Route path="/" element={<Index />} />
